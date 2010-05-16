@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<title> jQuery Yahoo! Weather </title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" charset="utf-8"></script>
+	<script src="jquery.simpleWeather.js" charset="utf-8"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$.simpleWeather({
+				locationId: '76309',
+				tempUnit: 'f',
+				success: function(weather) {
+					$("body").append("<p>"+weather.title+"</p>");
+					$("body").append("<p>Location: "+weather.city+", "+weather.region+" "+weather.country+"</p>");
+					$("body").append("<p><strong>Current Temp:</strong>: "+weather.temp+weather.unit+"</p>");
+					$("body").append('<p><img src="'+weather.image+'"></p>');
+					$("body").append("<p>Last updated: "+weather.updated+"</p>")
+				},
+				error: function(error) {
+					alert(error);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>jQuery Weather Plugin</h1>
+</body>
+</html>
