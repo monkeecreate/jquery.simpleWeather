@@ -48,11 +48,21 @@
 							weather["title"] = result.item.title;
 							weather["temp"] = result.item.condition.temp;
 							weather["unit"] = result.units.temperature;
+							weather["info"] = result.item.condition.text;
+							weather["todayHigh"] = result.item.forecast[0].high;
+							weather["todayLow"] = result.item.forecast[0].low;
+							weather["todayInfo"] = result.item.forecast[0].text;
+							weather["tomorrowHigh"] = result.item.forecast[1].high;
+							weather["tomorrowLow"] = result.item.forecast[1].low;
 							weather["image"] = "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+".png";
 							weather["city"] = result.location.city;
 							weather["country"] = result.location.country;
 							weather["region"] = result.location.region;
 							weather["updated"] = result.item.pubDate;
+							weather["sunrise"] = result.astronomy.sunrise;
+							weather["sunset"] = result.astronomy.sunset;
+							weather["description"] = result.item.description;
+							weather["link"] = result.item.link;
 						});
 						
 						options.success(weather);

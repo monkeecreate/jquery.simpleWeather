@@ -3,7 +3,7 @@
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	
-	<title> jQuery Yahoo! Weather </title>
+	<title>simpleWeather | jQuery Yahoo! Weather</title>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" charset="utf-8"></script>
 	<script src="jquery.simpleWeather.js" charset="utf-8"></script>
@@ -15,10 +15,14 @@
 				tempUnit: 'f',
 				success: function(weather) {
 					$("body").append("<p>"+weather.title+"</p>");
-					$("body").append("<p>Location: "+weather.city+", "+weather.region+" "+weather.country+"</p>");
-					$("body").append("<p><strong>Current Temp:</strong>: "+weather.temp+weather.unit+"</p>");
+					$("body").append("<p><strong>Location</strong>: "+weather.city+", "+weather.region+" "+weather.country+"</p>");
+					$("body").append("<p><strong>Today's High</strong>: "+weather.todayHigh+" - <strong>Today's Low</strong>: "+weather.todayLow+"</p>");
+					$("body").append("<p><strong>Current Temp</strong>: "+weather.temp+weather.unit+"</p>");
+					$("body").append("<p><strong>Currently</strong>: "+weather.info+" - <strong>Forecast</strong>: "+weather.todayInfo+"</p>");
 					$("body").append('<p><img src="'+weather.image+'"></p>');
-					$("body").append("<p>Last updated: "+weather.updated+"</p>")
+					$("body").append("<p><strong>Sunrise</strong>: "+weather.sunrise+" - <strong>Sunset</strong>: "+weather.sunset+"</p>");
+					$("body").append("<p><strong>Last updated</strong>: "+weather.updated+"</p>");
+					$("body").append('<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>');
 				},
 				error: function(error) {
 					alert(error);
@@ -28,6 +32,6 @@
 	</script>
 </head>
 <body>
-	<h1>jQuery Weather Plugin</h1>
+	<h1>simpleWeather | jQuery Plugin</h1>
 </body>
 </html>
