@@ -11,14 +11,14 @@
 	<script type="text/javascript">
 		$(function() {
 			$.simpleWeather({
-				locationId: '76309',
+				location: '76309',
 				tempUnit: 'f',
 				success: function(weather) {
 					$("body").append("<p>"+weather.title+"</p>");
 					$("body").append("<p><strong>Location</strong>: "+weather.city+", "+weather.region+" "+weather.country+"</p>");
-					$("body").append("<p><strong>Today's High</strong>: "+weather.todayHigh+" - <strong>Today's Low</strong>: "+weather.todayLow+"</p>");
-					$("body").append("<p><strong>Current Temp</strong>: "+weather.temp+weather.unit+"</p>");
-					$("body").append("<p><strong>Currently</strong>: "+weather.info+" - <strong>Forecast</strong>: "+weather.todayInfo+"</p>");
+					$("body").append("<p><strong>Today's High</strong>: "+weather.high+"&deg; "+weather.units.temp+" - <strong>Today's Low</strong>: "+weather.low+"&deg; "+weather.units.temp+"</p>");
+					$("body").append("<p><strong>Current Temp</strong>: "+weather.temp+"&deg; "+weather.units.temp+"</p>");
+					$("body").append("<p><strong>Currently</strong>: "+weather.currently+" - <strong>Forecast</strong>: "+weather.forecast+"</p>");
 					$("body").append('<p><img src="'+weather.image+'"></p>');
 					$("body").append("<p><strong>Sunrise</strong>: "+weather.sunrise+" - <strong>Sunset</strong>: "+weather.sunset+"</p>");
 					$("body").append("<p><strong>Last updated</strong>: "+weather.updated+"</p>");
