@@ -18,6 +18,7 @@
 					$("body").append("<p><strong>Location</strong>: "+weather.city+", "+weather.region+" "+weather.country+"</p>");
 					$("body").append("<p><strong>Today's High</strong>: "+weather.high+"&deg; "+weather.units.temp+" - <strong>Today's Low</strong>: "+weather.low+"&deg; "+weather.units.temp+"</p>");
 					$("body").append("<p><strong>Current Temp</strong>: "+weather.temp+"&deg; "+weather.units.temp+"</p>");
+					$("body").append("<p><strong>Wind</strong>: "+weather.wind.direction+" "+weather.wind.speed+" "+weather.units.speed+"</p>");
 					$("body").append("<p><strong>Currently</strong>: "+weather.currently+" - <strong>Forecast</strong>: "+weather.forecast+"</p>");
 					$("body").append('<p><img src="'+weather.image+'"></p>');
 					$("body").append("<p><strong>Sunrise</strong>: "+weather.sunrise+" - <strong>Sunset</strong>: "+weather.sunset+"</p>");

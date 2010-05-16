@@ -43,6 +43,26 @@
 							else
 								timeOfDay = 'n';
 							
+							wind = result.wind.direction;
+							if (wind>338)
+								windDirection = "N";
+							else if (wind>0 && wind<23)
+								windDirection = "N";
+							else if (wind>24 && wind<68)
+								windDirection = "NE";
+							else if (wind>69 && wind<113)
+								windDirection = "E";
+							else if (wind>114 && wind<185)
+								windDirection = "SE";
+							else if (wind>186 && wind<203)
+								windDirection = "S";
+							else if (wind>204 && wind<248)
+								windDirection = "SW";
+							else if (wind>249 && wind<293)
+								windDirection = "W";
+							else if (wind>294 && wind<337)
+								windDirection = "NW";
+							
 							var weather = {							
 								title: result.item.title,
 								temp: result.item.condition.temp,
@@ -58,7 +78,7 @@
 								forecast: result.item.forecast[0].text,
 								wind:{
 									chill: result.wind.chill,
-									direction: result.wind.direction,
+									direction: windDirection,
 									speed: result.wind.speed
 								},
 								humidity: result.atmosphere.humidity,
