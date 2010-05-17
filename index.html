@@ -11,19 +11,30 @@
 	<script type="text/javascript">
 		$(function() {
 			$.simpleWeather({
-				location: '76309',
-				tempUnit: 'f',
+				zipcode: '76309',
+				unit: 'f',
 				success: function(weather) {
-					$("body").append("<p>"+weather.title+"</p>");
-					$("body").append("<p><strong>Location</strong>: "+weather.city+", "+weather.region+" "+weather.country+"</p>");
-					$("body").append("<p><strong>Today's High</strong>: "+weather.high+"&deg; "+weather.units.temp+" - <strong>Today's Low</strong>: "+weather.low+"&deg; "+weather.units.temp+"</p>");
-					$("body").append("<p><strong>Current Temp</strong>: "+weather.temp+"&deg; "+weather.units.temp+"</p>");
-					$("body").append("<p><strong>Wind</strong>: "+weather.wind.direction+" "+weather.wind.speed+" "+weather.units.speed+"</p>");
-					$("body").append("<p><strong>Currently</strong>: "+weather.currently+" - <strong>Forecast</strong>: "+weather.forecast+"</p>");
-					$("body").append('<p><img src="'+weather.image+'"></p>');
-					$("body").append("<p><strong>Sunrise</strong>: "+weather.sunrise+" - <strong>Sunset</strong>: "+weather.sunset+"</p>");
-					$("body").append("<p><strong>Last updated</strong>: "+weather.updated+"</p>");
-					$("body").append('<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>');
+					$("#weather").append("<h2>"+weather.city+", "+weather.region+" "+weather.country+"</h2>");
+					$("#weather").append("<p><strong>Today's High</strong>: "+weather.high+"&deg; "+weather.units.temp+" - <strong>Today's Low</strong>: "+weather.low+"&deg; "+weather.units.temp+"</p>");
+					$("#weather").append("<p><strong>Current Temp</strong>: "+weather.temp+"&deg; "+weather.units.temp+"</p>");
+					$("#weather").append("<p><strong>Wind</strong>: "+weather.wind.direction+" "+weather.wind.speed+" "+weather.units.speed+"</p>");
+					$("#weather").append("<p><strong>Currently</strong>: "+weather.currently+" - <strong>Forecast</strong>: "+weather.forecast+"</p>");
+					$("#weather").append('<p><img src="'+weather.image+'"></p>');
+					$("#weather").append("<p><strong>Sunrise</strong>: "+weather.sunrise+" - <strong>Sunset</strong>: "+weather.sunset+"</p>");
+					$("#weather").append("<p><strong>Last updated</strong>: "+weather.updated+"</p>");
+					$("#weather").append('<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>');
+				},
+				error: function(error) {
+					alert(error);
+				}
+			});
+			
+			$.simpleWeather({
+				zipcode: '90210',
+				unit: 'f',
+				success: function(weather) {
+					$("#weather2").append('<h2><img style="float:left;" width="65px" src="'+weather.image+'">'+weather.city+', '+weather.region+'</h2>');
+					$("#weather2").append('<p><strong>Currently</strong>: '+weather.temp+'&deg; '+weather.units.temp+' '+weather.currently+'</p>');
 				},
 				error: function(error) {
 					alert(error);
@@ -34,5 +45,8 @@
 </head>
 <body>
 	<h1>simpleWeather | jQuery Plugin</h1>
+	<div id="weather"></div>
+	<p>&nbsp;</p>
+	<div id="weather2"></div>
 </body>
 </html>

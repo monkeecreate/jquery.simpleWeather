@@ -15,15 +15,15 @@
 	$.extend({
 		simpleWeather: function(options){
 			var options = $.extend({
-				location: '76309',
-				tempUnit: 'f',
+				zipcode: '76309',
+				unit: 'f',
 				success: function(weather){},
 				error: function(message){}
 			}, options);
 
 			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&diagnostics=true&callback=&q=';
 			if(options.location != '')
-				weatherUrl += 'select * from weather.forecast where location in ("'+options.location+'") and u="'+options.tempUnit+'"';
+				weatherUrl += 'select * from weather.forecast where location in ("'+options.zipcode+'") and u="'+options.unit+'"';
 			else {
 				options.error("No location given.");
 				return false;
