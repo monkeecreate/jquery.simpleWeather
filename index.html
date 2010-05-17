@@ -25,7 +25,7 @@
 					$("#weather").append('<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>');
 				},
 				error: function(error) {
-					alert(error);
+					$("#weather").html("<p>"+error+"</p>");
 				}
 			});
 			
@@ -37,7 +37,7 @@
 					$("#weather2").append('<p><strong>Currently</strong>: '+weather.temp+'&deg; '+weather.units.temp+' '+weather.currently+'</p>');
 				},
 				error: function(error) {
-					alert(error);
+					$("#weather2").html("<p>"+error+"</p>");
 				}
 			});
 		});

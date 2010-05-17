@@ -107,7 +107,7 @@
 							options.success(weather);
 						});
 					} else {
-						options.error("Bad request.");
+						options.error("Weather could not be displayed. Try again.");
 					}
 				}
 			});
