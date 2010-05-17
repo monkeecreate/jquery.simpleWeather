@@ -5,6 +5,45 @@
 	
 	<title>simpleWeather | jQuery Yahoo! Weather</title>
 	
+	<style>
+		#weather2 {
+			background: #6f9dbe;
+			background: -webkit-gradient(linear, left top, left bottom, from(#adc7db), to(#6f9dbe));
+			background: -moz-linear-gradient(top, #b2bcc8, #adc7db);
+			width: 185px;
+			padding: 5px 10px;
+			overflow: hidden;
+			border: 1px solid #6591b3;
+		}
+		
+		#weather2 h2 {
+			color: #000;
+			text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
+		}
+		
+		#weather2 p {
+			font-size: 25px;
+			margin: 30px 0 0;
+		}
+		
+		#weather2 p span {
+			font-size: 16px;
+		}
+		
+		#weather2 a:link, #weather2 a:active, #weather2 a:visited {
+			display: block;
+			clear: both;
+			text-decoration: none;
+			color: #222;
+			font-size: 12px;
+		}
+		
+		#weather2 a:hover {
+			color: #000;
+			text-decoration: underline;
+		}
+	</style>
+	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" charset="utf-8"></script>
 	<script src="jquery.simpleWeather.js" charset="utf-8"></script>
 
@@ -33,8 +72,10 @@
 				zipcode: '90210',
 				unit: 'f',
 				success: function(weather) {
-					$("#weather2").append('<h2><img style="float:left;" width="65px" src="'+weather.image+'">'+weather.city+', '+weather.region+'</h2>');
-					$("#weather2").append('<p><strong>Currently</strong>: '+weather.temp+'&deg; '+weather.units.temp+' '+weather.currently+'</p>');
+					$("#weather2").append('<h2>'+weather.city+', '+weather.region+'</h2>');
+					$("#weather2").append('<img style="float:left;" width="125px" src="'+weather.image+'">');
+					$("#weather2").append('<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>');
+					$("#weather2").append('<a href="'+weather.link+'">View Forecast &raquo;</a>');
 				},
 				error: function(error) {
 					$("#weather2").html("<p>"+error+"</p>");
@@ -45,8 +86,22 @@
 </head>
 <body>
 	<h1>simpleWeather | jQuery Plugin</h1>
+	<p>A simple jQuery plugin to display the weather information for any location. The data is pulled from the public Yahoo! Weather feed via the YQL API. Below you will find 2 basic usage examples. You can download the plugin from <a href="http://plugins.jquery.com/project/simpleWeather">jQuery Plugins</a> or get the full source from <a href="http://github.com/monkeecreate/jquery.simpleWeather">GitHub</a>.</p>
+	
 	<div id="weather"></div>
 	<p>&nbsp;</p>
 	<div id="weather2"></div>
+	
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1574394-22']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </body>
 </html>
