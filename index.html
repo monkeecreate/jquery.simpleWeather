@@ -56,10 +56,12 @@
 					$("#weather").append("<h2>"+weather.city+", "+weather.region+" "+weather.country+"</h2>");
 					$("#weather").append("<p><strong>Today's High</strong>: "+weather.high+"&deg; "+weather.units.temp+" - <strong>Today's Low</strong>: "+weather.low+"&deg; "+weather.units.temp+"</p>");
 					$("#weather").append("<p><strong>Current Temp</strong>: "+weather.temp+"&deg; "+weather.units.temp+"</p>");
-					$("#weather").append("<p><strong>Wind</strong>: "+weather.wind.direction+" "+weather.wind.speed+" "+weather.units.speed+"</p>");
+					$("#weather").append("<p><strong>Wind</strong>: "+weather.wind.direction+" "+weather.wind.speed+" "+weather.units.speed+" <strong>Wind Chill</strong>: "+weather.wind.chill+"</p>");
 					$("#weather").append("<p><strong>Currently</strong>: "+weather.currently+" - <strong>Forecast</strong>: "+weather.forecast+"</p>");
 					$("#weather").append('<p><img src="'+weather.image+'"></p>');
+					$("#weather").append("<p><strong>Humidity</strong>: "+weather.humidity+" <strong>Pressure</strong>: "+weather.pressure+" <strong>Rising</strong>: "+weather.rising+" <strong>Visibility</strong>: "+weather.visibility+"</p>");
 					$("#weather").append("<p><strong>Sunrise</strong>: "+weather.sunrise+" - <strong>Sunset</strong>: "+weather.sunset+"</p>");
+					$("#weather").append("<p><strong>Tomorrow's Date</strong>: "+weather.tomorrow.day+" "+weather.tomorrow.date+"<br /><strong>Tomorrow's High/Low</strong>: "+weather.tomorrow.high+"/"+weather.tomorrow.low+"<br /><strong>Tomorrow's Forecast</strong>: "+weather.tomorrow.forecast+"<br /> <strong>Tomorrow's Image</strong>: "+weather.tomorrow.image+"</p>");
 					$("#weather").append("<p><strong>Last updated</strong>: "+weather.updated+"</p>");
 					$("#weather").append('<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>');
 				},
@@ -88,20 +90,8 @@
 	<h1>simpleWeather | jQuery Plugin</h1>
 	<p>A simple jQuery plugin to display the weather information for any location. The data is pulled from the public Yahoo! Weather feed via the YQL API. Below you will find 2 basic usage examples. You can download the plugin from <a href="http://plugins.jquery.com/project/simpleWeather">jQuery Plugins</a> or get the full source from <a href="http://github.com/monkeecreate/jquery.simpleWeather">GitHub</a>.</p>
 	
-	<div id="weather"></div>
-	<p>&nbsp;</p>
 	<div id="weather2"></div>
-	
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1574394-22']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+	<p>&nbsp;</p>
+	<div id="weather"></div>
 </body>
 </html>
