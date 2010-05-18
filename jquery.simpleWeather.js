@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.0.1 - Last updated: May 17 2010
+ * Version 1.1 - Last updated: May 17 2010
  */
 
 (function($) {
