@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.0 - Last updated: May 16 2010
+ * Version 1.0.1 - Last updated: May 17 2010
  */
 
 (function($) {
@@ -63,7 +63,7 @@
 							else if (wind>294 && wind<337)
 								windDirection = "NW";
 							
-							var weather = {							
+							var weather = {					
 								title: result.item.title,
 								temp: result.item.condition.temp,
 								units:{
@@ -88,6 +88,7 @@
 								sunrise: result.astronomy.sunrise,
 								sunset: result.astronomy.sunset,
 								description: result.item.description,
+								thumbnail: $(result.item.description+':image').attr("src"),	
 								image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+".png",
 								tomorrow:{
 									high: result.item.forecast[1].high,
