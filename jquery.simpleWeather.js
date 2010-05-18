@@ -2,13 +2,13 @@
  * simpleWeather
  * 
  * A simple jQuery plugin to display the weather information
- * for a locations. Weather is pulled from the public Yahoo!
+ * for a location. Weather is pulled from the public Yahoo!
  * Weather feed via their api.
  *
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.1 - Last updated: May 17 2010
+ * Version 1.2 - Last updated: May 18 2010
  */
 
 (function($) {
@@ -16,13 +16,16 @@
 		simpleWeather: function(options){
 			var options = $.extend({
 				zipcode: '76309',
+				location: '',
 				unit: 'f',
 				success: function(weather){},
 				error: function(message){}
 			}, options);
 
-			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&diagnostics=true&callback=&q=';
+			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&diagnostics=true&callback=&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
 			if(options.location != '')
+				weatherUrl += 'select * from weather.forecast where location in (select id from weather.search where query="'+options.location+'") and u="'+options.unit+'"';
+			else if(options.zipcode != '')
 				weatherUrl += 'select * from weather.forecast where location in ("'+options.zipcode+'") and u="'+options.unit+'"';
 			else {
 				options.error("No location given.");
@@ -34,7 +37,7 @@
 				dataType: 'json',
 				success: function(data) {
 					if(data != null) {
-						$.each(data.query.results, function(i, result) {
+						$.each(data.query.results, function(i, result) {							
 							currentDate = new Date();
 							sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
 							sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
@@ -88,7 +91,7 @@
 								sunrise: result.astronomy.sunrise,
 								sunset: result.astronomy.sunset,
 								description: result.item.description,
-								thumbnail: $(result.item.description+':image').attr("src"),	
+								thumbnail: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+"s.png",
 								image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+".png",
 								tomorrow:{
 									high: result.item.forecast[1].high,
