@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.2 - Last updated: May 18 2010
+ * Version 1.3 - Last updated: May 26 2010
  */
 
 (function($) {
@@ -22,7 +22,7 @@
 				error: function(message){}
 			}, options);
 
-			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&diagnostics=true&callback=&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
+			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&diagnostics=true&callback=?&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
 			if(options.location != '')
 				weatherUrl += 'select * from weather.forecast where location in (select id from weather.search where query="'+options.location+'") and u="'+options.unit+'"';
 			else if(options.zipcode != '')
@@ -32,11 +32,10 @@
 				return false;
 			}
 						
-			$.ajax({
-				url: weatherUrl,
-				dataType: 'json',
-				success: function(data) {
-					if(data != null) {
+			$.getJSON(
+				weatherUrl,
+				function(data) {
+					if(data != null && data.query.results != null) {
 						$.each(data.query.results, function(i, result) {							
 							currentDate = new Date();
 							sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
@@ -99,23 +98,25 @@
 									forecast: result.item.forecast[1].text,
 									date: result.item.forecast[1].date,
 									day: result.item.forecast[1].day,
-									image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png",
+									image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
 								},
 								city: result.location.city,
 								country: result.location.country,
 								region: result.location.region,
 								updated: result.item.pubDate,
-								link: result.item.link,
+								link: result.item.link
 							};
 							
 							options.success(weather);
 						});
 					} else {
-						options.error("Weather could not be displayed. Try again.");
+						if (data.query.results == null)
+							options.error("Invalid location given.");
+						else
+							options.error("Weather could not be displayed. Try again.");
 					}
 				}
-			});
-			
+			);
 			return this;
 		}		
 	});
