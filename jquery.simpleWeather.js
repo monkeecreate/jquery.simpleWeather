@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.3 - Last updated: May 26 2010
+ * Version 1.4 - Last updated: June 4 2010
  */
 
 (function($) {
@@ -36,7 +36,10 @@
 				weatherUrl,
 				function(data) {
 					if(data != null && data.query.results != null) {
-						$.each(data.query.results, function(i, result) {							
+						$.each(data.query.results, function(i, result) {
+							if (result.constructor.toString().indexOf("Array") != -1)
+								result = result[0];
+														
 							currentDate = new Date();
 							sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
 							sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
