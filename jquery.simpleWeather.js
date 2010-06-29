@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.4 - Last updated: June 4 2010
+ * Version 1.5 - Last updated: June 29 2010
  */
 
 (function($) {
@@ -51,21 +51,21 @@
 							wind = result.wind.direction;
 							if (wind>338)
 								windDirection = "N";
-							else if (wind>0 && wind<23)
+							else if (wind>=0 && wind<24)
 								windDirection = "N";
-							else if (wind>24 && wind<68)
+							else if (wind>=24 && wind<69)
 								windDirection = "NE";
-							else if (wind>69 && wind<113)
+							else if (wind>=69 && wind<114)
 								windDirection = "E";
-							else if (wind>114 && wind<185)
+							else if (wind>=114 && wind<186)
 								windDirection = "SE";
-							else if (wind>186 && wind<203)
+							else if (wind>=186 && wind<204)
 								windDirection = "S";
-							else if (wind>204 && wind<248)
+							else if (wind>=204 && wind<249)
 								windDirection = "SW";
-							else if (wind>249 && wind<293)
+							else if (wind>=249 && wind<294)
 								windDirection = "W";
-							else if (wind>294 && wind<337)
+							else if (wind>=294 && wind<338)
 								windDirection = "NW";
 							
 							var weather = {					
