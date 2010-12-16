@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.5 - Last updated: June 29 2010
+ * Version 1.6 - Last updated: December 16 2010
  */
 
 (function($) {
@@ -51,7 +51,7 @@
 							wind = result.wind.direction;
 							if (wind>338)
 								windDirection = "N";
-							else if (wind>=0 && wind<24)
+							else if (wind==0 && wind<24)
 								windDirection = "N";
 							else if (wind>=24 && wind<69)
 								windDirection = "NE";
@@ -67,6 +67,8 @@
 								windDirection = "W";
 							else if (wind>=294 && wind<338)
 								windDirection = "NW";
+							else
+								windDirection = "";
 							
 							var weather = {					
 								title: result.item.title,
