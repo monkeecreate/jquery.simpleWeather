@@ -53,18 +53,20 @@
 				location: 'london, united kingdom',
 				unit: 'f',
 				success: function(weather) {
-					$("#weather").append('<h2>'+weather.city+', '+weather.region+' '+weather.country+'</h2>');
-					$("#weather").append('<p><strong>Today\'s High</strong>: '+weather.high+'&deg; '+weather.units.temp+' - <strong>Today\'s Low</strong>: '+weather.low+'&deg; '+weather.units.temp+'</p>');
-					$("#weather").append('<p><strong>Current Temp</strong>: '+weather.temp+'&deg; '+weather.units.temp+'</p>');
-					$("#weather").append('<p><strong>Thumbnail</strong>: <img src="'+weather.thumbnail+'"></p>');
-					$("#weather").append('<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+' <strong>Wind Chill</strong>: '+weather.wind.chill+'</p>');
-					$("#weather").append('<p><strong>Currently</strong>: '+weather.currently+' - <strong>Forecast</strong>: '+weather.forecast+'</p>');
-					$("#weather").append('<p><img src="'+weather.image+'"></p>');
-					$("#weather").append('<p><strong>Humidity</strong>: '+weather.humidity+' <strong>Pressure</strong>: '+weather.pressure+' <strong>Rising</strong>: '+weather.rising+' <strong>Visibility</strong>: '+weather.visibility+'</p>');
-					$("#weather").append('<p><strong>Sunrise</strong>: '+weather.sunrise+' - <strong>Sunset</strong>: '+weather.sunset+'</p>');
-					$("#weather").append('<p><strong>Tomorrow\'s Date</strong>: '+weather.tomorrow.day+' '+weather.tomorrow.date+'<br /><strong>Tomorrow\'s High/Low</strong>: '+weather.tomorrow.high+'/'+weather.tomorrow.low+'<br /><strong>Tomorrow\'s Forecast</strong>: '+weather.tomorrow.forecast+'<br /> <strong>Tomorrow\'s Image</strong>: '+weather.tomorrow.image+'</p>');
-					$("#weather").append('<p><strong>Last updated</strong>: '+weather.updated+'</p>');
-					$("#weather").append('<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>');
+					html = '<h2>'+weather.city+', '+weather.region+' '+weather.country+'</h2>';
+					html += '<p><strong>Today\'s High</strong>: '+weather.high+'&deg; '+weather.units.temp+' - <strong>Today\'s Low</strong>: '+weather.low+'&deg; '+weather.units.temp+'</p>';
+					html += '<p><strong>Current Temp</strong>: '+weather.temp+'&deg; '+weather.units.temp+'</p>';
+					html += '<p><strong>Thumbnail</strong>: <img src="'+weather.thumbnail+'"></p>';
+					html += '<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+' <strong>Wind Chill</strong>: '+weather.wind.chill+'</p>';
+					html += '<p><strong>Currently</strong>: '+weather.currently+' - <strong>Forecast</strong>: '+weather.forecast+'</p>';
+					html += '<p><img src="'+weather.image+'"></p>';
+					html += '<p><strong>Humidity</strong>: '+weather.humidity+' <strong>Pressure</strong>: '+weather.pressure+' <strong>Rising</strong>: '+weather.rising+' <strong>Visibility</strong>: '+weather.visibility+'</p>';
+					html += '<p><strong>Sunrise</strong>: '+weather.sunrise+' - <strong>Sunset</strong>: '+weather.sunset+'</p>';
+					html += '<p><strong>Tomorrow\'s Date</strong>: '+weather.tomorrow.day+' '+weather.tomorrow.date+'<br /><strong>Tomorrow\'s High/Low</strong>: '+weather.tomorrow.high+'/'+weather.tomorrow.low+'<br /><strong>Tomorrow\'s Forecast</strong>: '+weather.tomorrow.forecast+'<br /> <strong>Tomorrow\'s Image</strong>: '+weather.tomorrow.image+'</p>';
+					html += '<p><strong>Last updated</strong>: '+weather.updated+'</p>';
+					html += '<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>';
+					
+					$("#weather").html(html);
 				},
 				error: function(error) {
 					$("#weather").html('<p>'+error+'</p>');
@@ -75,10 +77,12 @@
 				zipcode: '90210',
 				unit: 'f',
 				success: function(weather) {
-					$("#weather2").append('<h2>'+weather.city+', '+weather.region+'</h2>');
-					$("#weather2").append('<img style="float:left;" width="125px" src="'+weather.image+'">');
-					$("#weather2").append('<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>');
-					$("#weather2").append('<a href="'+weather.link+'">View Forecast &raquo;</a>');
+					html = '<h2>'+weather.city+', '+weather.region+'</h2>';
+					html += '<img style="float:left;" width="125px" src="'+weather.image+'">';
+					html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
+					html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
+					
+					$("#weather2").html(html);
 				},
 				error: function(error) {
 					$("#weather2").html('<p>'+error+'</p>');
