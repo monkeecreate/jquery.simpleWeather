@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.6 - Last updated: December 16 2010
+ * Version 1.7 - Last updated: May 08 2011
  */
 
 (function($) {
@@ -73,6 +73,7 @@
 							var weather = {					
 								title: result.item.title,
 								temp: result.item.condition.temp,
+								code: result.item.condition.code,
 								units:{
 									temp: result.units.temperature,
 									distance: result.units.distance,
@@ -101,6 +102,7 @@
 									high: result.item.forecast[1].high,
 									low: result.item.forecast[1].low,
 									forecast: result.item.forecast[1].text,
+									code: result.item.forecast[1].code,
 									date: result.item.forecast[1].date,
 									day: result.item.forecast[1].day,
 									image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
