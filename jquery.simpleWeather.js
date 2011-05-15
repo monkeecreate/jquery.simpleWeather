@@ -8,7 +8,7 @@
  * Developed by James Fleeting <twofivethreetwo@gmail.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.7 - Last updated: May 08 2011
+ * Version 1.8 - Last updated: May 15 2011
  */
 
 (function($) {
@@ -21,8 +21,10 @@
 				success: function(weather){},
 				error: function(message){}
 			}, options);
-
-			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&diagnostics=true&callback=?&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
+			
+			now = new Date(); //cachebust
+			
+			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&diagnostics=true&callback=?&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
 			if(options.location != '')
 				weatherUrl += 'select * from weather.forecast where location in (select id from weather.search where query="'+options.location+'") and u="'+options.unit+'"';
 			else if(options.zipcode != '')
@@ -43,32 +45,18 @@
 							currentDate = new Date();
 							sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
 							sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
-							if (currentDate>sunRise && currentDate<sunSet)
+							if(currentDate>sunRise && currentDate<sunSet)
 								timeOfDay = 'd'; 
 							else
 								timeOfDay = 'n';
 							
-							wind = result.wind.direction;
-							if (wind>338)
-								windDirection = "N";
-							else if (wind==0 && wind<24)
-								windDirection = "N";
-							else if (wind>=24 && wind<69)
-								windDirection = "NE";
-							else if (wind>=69 && wind<114)
-								windDirection = "E";
-							else if (wind>=114 && wind<186)
-								windDirection = "SE";
-							else if (wind>=186 && wind<204)
-								windDirection = "S";
-							else if (wind>=204 && wind<249)
-								windDirection = "SW";
-							else if (wind>=249 && wind<294)
-								windDirection = "W";
-							else if (wind>=294 && wind<338)
-								windDirection = "NW";
+							compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
+						    windDirection = compass[Math.round(result.wind.direction / 22.5)];
+							
+							if(result.item.condition.temp < 80 && result.atmosphere.humidity < 40)
+								heatIndex = -42.379+2.04901523*result.item.condition.temp+10.14333127*result.atmosphere.humidity-0.22475541*result.item.condition.temp*result.atmosphere.humidity-6.83783*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))-5.481717*(Math.pow(10, -2))*(Math.pow(result.atmosphere.humidity, 2))+1.22874*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))*result.atmosphere.humidity+8.5282*(Math.pow(10, -4))*result.item.condition.temp*(Math.pow(result.atmosphere.humidity, 2))-1.99*(Math.pow(10, -6))*(Math.pow(result.item.condition.temp, 2))*(Math.pow(result.atmosphere.humidity,2));
 							else
-								windDirection = "";
+								heatIndex = result.item.condition.temp;
 							
 							var weather = {					
 								title: result.item.title,
@@ -90,6 +78,7 @@
 									speed: result.wind.speed
 								},
 								humidity: result.atmosphere.humidity,
+								heatindex: heatIndex,
 								pressure: result.atmosphere.pressure,
 								rising: result.atmosphere.rising,
 								visibility: result.atmosphere.visibility,
