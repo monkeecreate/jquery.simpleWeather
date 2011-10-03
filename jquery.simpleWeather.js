@@ -5,10 +5,10 @@
  * for a location. Weather is pulled from the public Yahoo!
  * Weather feed via their api.
  *
- * Developed by James Fleeting <twofivethreetwo@gmail.com>
+ * Developed by James Fleeting <hello@jamesfleeting.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.8 - Last updated: May 15 2011
+ * Version 1.9 - Last updated: October 3 2011
  */
 
 (function($) {
@@ -58,9 +58,15 @@
 							else
 								heatIndex = result.item.condition.temp;
 							
+							if(options.unit == "f")
+								tempAlt = Math.round((5.0/9.0)*(result.item.condition.temp-32.0));
+							else
+								tempAlt = Math.round((9.0/5.0)*result.item.condition.temp+32.0);
+							
 							var weather = {					
 								title: result.item.title,
 								temp: result.item.condition.temp,
+								tempAlt: tempAlt,
 								code: result.item.condition.code,
 								units:{
 									temp: result.units.temperature,

@@ -55,7 +55,7 @@
 				success: function(weather) {
 					html = '<h2>'+weather.city+', '+weather.region+' '+weather.country+'</h2>';
 					html += '<p><strong>Today\'s High</strong>: '+weather.high+'&deg; '+weather.units.temp+' - <strong>Today\'s Low</strong>: '+weather.low+'&deg; '+weather.units.temp+'</p>';
-					html += '<p><strong>Current Temp</strong>: '+weather.temp+'&deg; '+weather.units.temp+'</p>';
+					html += '<p><strong>Current Temp</strong>: '+weather.temp+'&deg; '+weather.units.temp+' ('+weather.tempAlt+'&deg; C)</p>';
 					html += '<p><strong>Condition Code</strong>: '+weather.code+'</p>';
 					html += '<p><strong>Thumbnail</strong>: <img src="'+weather.thumbnail+'"></p>';
 					html += '<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+' <strong>Wind Chill</strong>: '+weather.wind.chill+'</p>';
