@@ -8,7 +8,7 @@
  * Developed by James Fleeting <hello@jamesfleeting.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 1.9 - Last updated: October 3 2011
+ * Version 2.0 - Last updated: November 23 2011
  */
 
 (function($) {
@@ -68,6 +68,7 @@
 								temp: result.item.condition.temp,
 								tempAlt: tempAlt,
 								code: result.item.condition.code,
+								todayCode: result.item.forecast[0].code,
 								units:{
 									temp: result.units.temperature,
 									distance: result.units.distance,
