@@ -1,0 +1,17 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Developer: James Fleeting
+  Site: http://jamesfleeting.com
+  Twitter: @twofivethreetwo
+  Location: Wichita Falls, TX
+
+/* THANKS */
+  Names (& URL): 
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software: 
