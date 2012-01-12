@@ -1,0 +1,32 @@
+{
+    "name": "simpleweather",
+    "version": "2.0",
+    "title": "simpleWeather",
+    "author": {
+        "name": "James Fleeting",
+        "email": "hello@jamesfleeting.com",
+        "url": "http://jamesfleeting.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "MIT-LICENSE.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">1.5"
+    },
+    "description": "A simple jQuery plugin to display the weather information for any location. The data is pulled from the public Yahoo! Weather feed via the YQL API.",
+    "keywords": [
+        "weather",
+        "yahoo",
+        "simpleweather",
+        "monkeecreate",
+        "weather data"
+    ],
+    "homepage": "http://simpleweather.monkeecreate.com",
+    "demo": "http://simpleweather.monkeecreate.com",
+    "files": [
+        "jquery.simpleWeather.js"
+    ]
+}
