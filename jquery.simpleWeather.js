@@ -8,13 +8,13 @@
  * Developed by James Fleeting <hello@jamesfleeting.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.0 - Last updated: November 23 2011
+ * Version 2.0.1 - Last updated: January 26 2012
  */
-
 (function($) {
+	"use strict";
 	$.extend({
 		simpleWeather: function(options){
-			var options = $.extend({
+			options = $.extend({
 				zipcode: '76309',
 				location: '',
 				unit: 'f',
@@ -22,14 +22,14 @@
 				error: function(message){}
 			}, options);
 			
-			now = new Date(); //cachebust
+			var now = new Date();
 			
 			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&diagnostics=true&callback=?&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
-			if(options.location != '')
+			if(options.location !== '') {
 				weatherUrl += 'select * from weather.forecast where location in (select id from weather.search where query="'+options.location+'") and u="'+options.unit+'"';
-			else if(options.zipcode != '')
+			} else if(options.zipcode !== '') {
 				weatherUrl += 'select * from weather.forecast where location in ("'+options.zipcode+'") and u="'+options.unit+'"';
-			else {
+			} else {
 				options.error("No location given.");
 				return false;
 			}
@@ -37,31 +37,36 @@
 			$.getJSON(
 				weatherUrl,
 				function(data) {
-					if(data != null && data.query.results != null) {
+					if(data !== null && data.query.results !== null) {
 						$.each(data.query.results, function(i, result) {
-							if (result.constructor.toString().indexOf("Array") != -1)
+							if (result.constructor.toString().indexOf("Array") !== -1) {
 								result = result[0];
+							}
 														
-							currentDate = new Date();
-							sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
-							sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
-							if(currentDate>sunRise && currentDate<sunSet)
-								timeOfDay = 'd'; 
-							else
-								timeOfDay = 'n';
+							var currentDate = new Date();
+							var sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
+							var sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
 							
-							compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
-						    windDirection = compass[Math.round(result.wind.direction / 22.5)];
+							if(currentDate>sunRise && currentDate<sunSet) {
+								var timeOfDay = 'd'; 
+							} else {
+								var timeOfDay = 'n';
+							}
 							
-							if(result.item.condition.temp < 80 && result.atmosphere.humidity < 40)
-								heatIndex = -42.379+2.04901523*result.item.condition.temp+10.14333127*result.atmosphere.humidity-0.22475541*result.item.condition.temp*result.atmosphere.humidity-6.83783*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))-5.481717*(Math.pow(10, -2))*(Math.pow(result.atmosphere.humidity, 2))+1.22874*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))*result.atmosphere.humidity+8.5282*(Math.pow(10, -4))*result.item.condition.temp*(Math.pow(result.atmosphere.humidity, 2))-1.99*(Math.pow(10, -6))*(Math.pow(result.item.condition.temp, 2))*(Math.pow(result.atmosphere.humidity,2));
-							else
-								heatIndex = result.item.condition.temp;
+							var compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
+							var windDirection = compass[Math.round(result.wind.direction / 22.5)];
 							
-							if(options.unit == "f")
-								tempAlt = Math.round((5.0/9.0)*(result.item.condition.temp-32.0));
-							else
-								tempAlt = Math.round((9.0/5.0)*result.item.condition.temp+32.0);
+							if(result.item.condition.temp < 80 && result.atmosphere.humidity < 40) {
+								var heatIndex = -42.379+2.04901523*result.item.condition.temp+10.14333127*result.atmosphere.humidity-0.22475541*result.item.condition.temp*result.atmosphere.humidity-6.83783*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))-5.481717*(Math.pow(10, -2))*(Math.pow(result.atmosphere.humidity, 2))+1.22874*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))*result.atmosphere.humidity+8.5282*(Math.pow(10, -4))*result.item.condition.temp*(Math.pow(result.atmosphere.humidity, 2))-1.99*(Math.pow(10, -6))*(Math.pow(result.item.condition.temp, 2))*(Math.pow(result.atmosphere.humidity,2));
+							} else {
+								var heatIndex = result.item.condition.temp;
+							}
+							
+							if(options.unit === "f") {
+								var tempAlt = Math.round((5.0/9.0)*(result.item.condition.temp-32.0));
+							} else {
+								var tempAlt = Math.round((9.0/5.0)*result.item.condition.temp+32.0);
+							}
 							
 							var weather = {					
 								title: result.item.title,
@@ -113,10 +118,11 @@
 							options.success(weather);
 						});
 					} else {
-						if (data.query.results == null)
+						if (data.query.results === null) {
 							options.error("Invalid location given.");
-						else
+						} else {
 							options.error("Weather could not be displayed. Try again.");
+						}
 					}
 				}
 			);
