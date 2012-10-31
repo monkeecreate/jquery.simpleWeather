@@ -1,727 +1,97 @@
-/* @group reset */
-
-/* http://meyerweb.com/eric/tools/css/reset/ | v2.0 | 20110126 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
 body {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+p {
+	margin-bottom: 25px;
+}
+
+#navbar {
+	max-width: 700px;
+	margin: 0 auto;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+}
+
+.nav {
+	margin-top: 13px;
+}
+
+.nav a.label:hover {
+	background: #005580;
+}
+
+/* Custom container */
+.container-narrow {
+	margin: 0 auto;
+	max-width: 700px;
+	/*padding-top: 67px;*/
+}
+
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+	margin: 95px 0;
+	text-align: center;
+}
+
+.jumbotron h1 {
+	font-size: 55px;
 	line-height: 1;
 }
 
-ol, ul {
-	list-style: none;
+.jumbotron .btn-large {
+	font-size: 21px;
+	padding: 14px 24px;
 }
 
-blockquote, q {
-	quotes: none;
+.twitter-share-button {
+	width: 90px !important;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+#___plusone_0 {
+	width: 70px !important;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.fb-like {
+	top: -3px;
 }
 
-/* @end */
-
-/* @group structure */
-
-html, body {
-	background: #121212;
+/* Supporting marketing content */
+.marketing {
+	margin: 60px 0;
 }
 
-body {
-	font: 62.5% "Arial", Verdana, sans-serif;
-	color: #888;
-	text-align: left;
+.marketing p + h4 {
+	margin-top: 28px;
 }
 
-/*
-
-@end */
-
-/* @group content */
-
-#content {
-	color: #;
-	margin: 0 25px 0 350px;
-	padding: 20px;
+#faq article {
+	margin-bottom: 35px;
+	padding-left: 20px;
+	border-left: 2px solid #eee;
 }
 
-.content a:link, .content a:active, .content a:visited {
-	color: #99cc33;
-	border-bottom: 2px solid #232323;
-	text-decoration: none;
-}
-
-.content a:focus {
-	outline: thin dotted;
-}
-
-.content a:hover {
-	color: #99cc33;
-	border-bottom: 1px solid #99cc33;
-	text-decoration: none;
-}
-
-.content h2 {
-	margin: 0 0 15px;
-	font-size: 3.5em;
-	color: #fff;
-}
-
-.content h3 {
-	margin: 25px 0 15px;
-	font-size: 2.5em;
-	color: #c1c1c1;
-}
-
-.content h4 {
-	margin: 25px 0 15px;
-	font-size: 2.6em;
-	font-weight: bold;
-	color: #;
-}
-
-.content h5 {
-	margin: 25px 0 15px;
-	font-size: 2.1em;
-	font-weight: bold;
-	color: #;
-}
-
-.content h6 {
-	margin: 25px 0 15px;
-	font-size: 1.7em;
-	font-weight: bold;
-	color: #;
-}
-
-.content p, .content blockquote {
-	margin: 0 0 20px 20px;
-	font-size: 1.5em;
-	line-height: 1.6em;
-}
-
-.content ul {
-	margin: 0 0 15px 30px;
-}
-
-.content ul li {
-	list-style-type: square;
-}
-
-.content ol {
-	margin: 0 0 15px 30px;
-	list-style-type: decimal;
-}
-
-.content ol li {
-	list-style-type: decimal;
-}
-
-.content li {
-	margin-bottom: 5px;
-	font-size: 1.3em;
-	line-height: 1.4em;
-}
-
-.content li li {
-	font-size: 1em;
-}
-
-.content article {
-	border-bottom: 2px solid #313131;
-	margin: 0 0 25px;
-	padding: 0 0 25px;
-	overflow: hidden;
-}
-
-/* @group weather */
-
-#weather {
-	background: #6f9dbe;
-	background: -webkit-gradient(linear, left top, left bottom, from(#adc7db), to(#6f9dbe));
-	background: -moz-linear-gradient(top, #b2bcc8, #adc7db);
-	width: 250px;
-	margin: 0 0 10px 10px;
-	padding: 5px 10px;
-	float: right;
-	overflow: hidden;
-	border: 1px solid #6591b3;
-}
-
-#weather h2 {
-	color: #444;
-	font-size: 2.2em;
-	text-shadow: rgba(250, 250, 250, 0.6) 2px 2px 0;
-}
-
-#weather p {
-	font-size: 25px;
-	margin: 30px 0 0;
-	line-height: inherit;
-	color: #fff;
-}
-
-#weather p span {
-	font-size: 16px;
-}
-
-#weather a:link, #weather2 a:active, #weather2 a:visited {
+#faq h4 span {
+	position: absolute;
 	display: block;
-	clear: both;
-	text-decoration: none;
-	color: #222;
-	font-size: 12px;
-	border: 0;
+	margin: 0 0 0 -73px;
+	padding: 13px 13px 15px;
+	color: #999;
+	font-size: 45px;
+	background: #eee;
+	border-radius: 8px 0 0 8px;
 }
 
-#weather a:hover {
-	color: #000;
+.footer .muted {
+	color: #ddd;
+}
+
+.footer .muted a {
+	color: #ddd;
 	text-decoration: underline;
-	border: 0;
-}
-
-/* @end */
-
-/* @end */
-
-/* @group sidebar */
-
-aside {
-	background: #000;
-	float: left;
-	display: inline;
-	width: 300px;
-	font-size: .95em;
-	color: #;
-	margin: 0;
-	padding: 20px;
-	position: fixed;
-}
-
-aside a:link, aside a:active, aside a:visited {
-	color: #ccc;
-	text-decoration: none;
-}
-
-aside a:focus {
-	outline: thin dotted;
-}
-
-aside a:hover {
-	color: #eee;
-	text-decoration: none;
-}
-
-aside nav li {
-	font-size: 2.5em;
-	margin: 0 0 10px;
-}
-
-aside nav li a span {
-	float: right;
-	display: none;
-	color: #99cc33;
-}
-
-aside nav li a:hover span {
-	display: inline;
-}
-
-aside h1 {
-	font-size: 3.0em;
-	color: #fff;
-	margin: 0 0 20px;
-}
-
-aside h2 {
-	margin-bottom: 1em;
-	font-size: 1.8em;
-	color: #fff;
-}
-
-aside h3 {
-	margin-bottom: 1em;
-	font-size: 1.5em;
-	font-weight: bold;
-	color: #;
-}
-
-aside h4 {
-	margin-bottom: 1em;
-	font-size: 1.4em;
-	font-weight: bold;
-	color: #;
-}
-
-aside h5 {
-	margin-bottom: 1em;
-	font-size: 1.3em;
-	font-weight: bold;
-	color: #;
-}
-
-aside h6 {
-	margin-bottom: 1em;
-	font-size: 1.2em;
-	font-weight: bold;
-	color: #;
-}
-
-aside p, aside blockquote {
-	margin-bottom: 1.8em;
-	font-size: 1.5em;
-	color: #fff;
-	line-height: 1.6em;
-	clear: both;
-}
-
-aside ul {
-	margin: 0 0 15px 30px;
-}
-
-aside ul li {
-	list-style-type: square;
-}
-
-aside ol {
-	margin: 0 0 15px 30px;
-	list-style-type: decimal;
-}
-
-aside ol li {
-	list-style-type: decimal;
-}
-
-aside li {
-	margin-bottom: 5px;
-	font-size: 1.3em;
-	line-height: 1.4em;
-}
-
-aside li li {
-	font-size: 1em;
-}
-
-aside a.download:link, aside a.download:active, aside a.download:visited {
-	background: #99cc33;
-	display: block;
-	font-size: 1.7em;
-	color: #fff;
-	margin: 0;
-	padding: 8px 0;
-	text-align: center;
-	clear: both;
-}
-
-aside a.download:hover {
-	background: #81ae38;
-}
-
-aside .releaseDate {
-	color: #888;
-	font-size: 1.2em;
-	float: right;
-	margin: 8px 0 20px;
-}
-
-/* @end */
-
-/* @group footer */
-
-footer {
-	background: #000;
-	border-top: 3px solid #99cc33;
-	text-align: center;
-	margin: 15px 0 0;
-	padding: 30px;
-}
-
-footer p {
-	color: #666;
-	font-size: 1.4em;
-	line-height: 1.9em;
-}
-
-footer p span {
-	font-size: 0.8em;
-	color: #313131;
-}
-
-footer a:link, footer a:active, footer a:visited {
-	color: #666;
-	border-bottom: 2px solid #232323;
-	text-decoration: none;
-}
-
-footer a:focus {
-	outline: thin dotted;
-}
-
-footer a:hover {
-	color: #666;
-	border-bottom: 2px solid #99cc33;
-	text-decoratio
- n: non
-e
-;
-}
-
-/* @end */
-
-/* @group code-prettify */
-
-/* based on desert scheme ported from vim to google prettify */
-
-pre {
-	display: block;
-	background-color: #000;
-	white-space: nowrap !important;
-	overflow: auto !important;
-	margin: 0 0 35px;
-}
-
-pre .nocode {
-	background-color: none;
-	color: #000
-}
-
-pre .str {
-	color: #e5d45f
-}
-
-/* string  - pink */
-
-pre .kwd {
-	color: #55d2ef;
-	font-weight: bold
-}
-
-pre .com {
-	color: #87ceeb
-}
-
-/* comment - skyblue */
-
-pre .typ {
-	color: #98fb98
-}
-
-/* type    - lightgreen */
-
-pre .lit {
-	color: #cd5c5c
-}
-
-/* literal - darkred */
-
-pre .pun {
-	color: #fff
-}
-
-/* punctuation */
-
-pre .pln {
-	color: #fff
-}
-
-/* plaintext */
-
-pre .tag {
-	color: #f0e68c;
-	font-weight: bold
-}
-
-/* html/xml tag    - lightyellow */
-
-pre .atn {
-	color: #ededed;
-	font-weight: bold
-}
-
-/* attribute name  - khaki */
-
-pre .atv {
-	color: #ffa0a0
-}
-
-/* attribute value - pink */
-
-pre .dec {
-	color: #98fb98
-}
-
-/* decimal         - lightgreen */
-
-/* Specify class=linenums on a pre to get line numbering */
-
-ol.linenums {
-	margin-top: 0;
-	margin-bottom: 0;
-	color: #AEAEAE
-}
-
-/* IE indents via margin-left */
-
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 {
-	list-style-type: none
-}
-
-/* Alternate shading for lines */
-
-li.L1,li.L3,li.L5,li.L7,li.L9 {
-	
-}
-
-@media print {
-
-pre {
-	background-color: none
-}
-
-pre .str, code .str {
-	color: #060
-}
-
-pre .kwd, code .kwd {
-	color: #006;
-	font-weight: bold
-}
-
-pre .com, code .com {
-	color: #600;
-	font-style: italic
-}
-
-pre .typ, code .typ {
-	color: #404;
-	font-weight: bold
-}
-
-pre .lit, code .lit {
-	color: #044
-}
-
-pre .pun, code .pun {
-	color: #440
-}
-
-pre .pln, code .pln {
-	color: #000
-}
-
-pre .tag, code .tag {
-	color: #006;
-	font-weight: bold
-}
-
-pre .atn, code .atn {
-	color: #404
-}
-
-pre .atv, code .atv {
-	color: #060
-}
-
-}
-
-/* @end */
-
-/* @group misc */
-
-.clear {
-	clear: both;
-	margin: 0;
-	padding: 0;
-	height: 0;
-}
-
-/* Hide from browsers */
-
-.hide {
-	display: none;
-}
-
-/* Hide from browsers & screenreaders */
-
-.hidden {
-	display: none;
-	visibility: hidden;
-}
-
-/* Hide from browsers, available to screenreaders */
-
-.visuallyHidden {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px);
-
-
-/* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-}
-
-/* Hide from browsers & screenreaders, maintain layout */
-
-.invisible {
-	visibility: hidden;
-}
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
-pre, code, kbd, samp {
-	font-family: monospace, sans-serif;
-}
-
-strong, th {
-	font-weight: bold;
-}
-
-pre {
-	padding: 15px;
-	white-space: pre;
-	/* 
-
-CSS2 */
-  white-space: pre-wrap;
-	/*
-
-CSS 2.1 */
-  white-space: pre-line;
-	/
-
-* CSS 3 (and 2.1 as well, actually) */
-  word-wrap: break-word;
-/
-
-* IE */
-}
-
-::-moz-selection {
-	background: #99cc33;
-	color: #fff;
-	text-shadow: none;
-}
-
-::selection {
-	background: #99cc33;
-	color: #fff;
-	text-shadow: none;
-}
-
-/* @end */
-
-@media all and (orientation:portrait) {
-
-}
-
-@media all and (orientation:landscape) {
-
-}
-
-@media screen and (max-device-width: 480px) {
-
-a:link {
-	-webkit-tap-highlight-color: #;
-}
-
-/* Prevent iOS, WinMobile from adjusting font size */
-
-html {
-	-webkit-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-}
-
-}
-
-@media print {
-
-* {
-	background: transparent !important;
-	color: #444 !important;
-	text-shadow: none !important;
-}
-
-a, a:visited {
-	color: #444 !important;
-	text-decoration: underline;
-}
-
-a:after {
-	content: " (" attr(href) ")";
-}
-
-abbr:after {
-	content: " (" attr(title) ")";
-}
-
-.ir a:after {
-	content: "";
-}
-
-/* Don't show links for images */
-
-pre, blockquote {
-	border: 1px solid #999;
-	page-break-inside: avoid;
-}
-
-thead {
-	display: table-header-group;
-}
-
-/* css-discuss.incutio.com/wiki/Printing_Tables */
-
-tr, img {
-	page-break-inside: avoid;
-}
-  @page {margin: 0.5cm;}
-
-p, h2, h3 {
-	orphans: 3;
-	widows: 3;
-}
-
-h2, h3 {
-	page-break-after: avoid;
-}
-
 }
