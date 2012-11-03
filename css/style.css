@@ -14,6 +14,14 @@ p {
 	border-bottom: 1px solid #eee;
 }
 
+#navbar h3 {
+	width: 129px;
+	height: 68px;
+	margin: -3px 0 0;
+	background: url(../images/logo-small.png) no-repeat 0 0;
+	text-indent: -999999px;
+}
+
 .nav {
 	margin-top: 13px;
 }

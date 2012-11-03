@@ -130,7 +130,7 @@
 
 				<article>
 					<h4 class="text-info"><span>6</span> Why yet another weather widget/plugin?</h4>
-					<p>This plugin came about because I wanted control over what was displayed. I've used other widgets and plugins and found that none fit my needs. The biggest issue was not having control over the code it was spitting out. This included some plugins giving me crazy HTML with a bunch of classes. Why not write your own HTML? <strong>simpleWeather</stong> gives you all the available data and you choose what to use and how it should be display. This includes using your own HTML and CSS. More then that this means you can use the plugin for more then just displaying current weather. An example would be to create a dynamic design that changes based on the weather such as a header or images. <strong>simpleWeather</strong> makes it... well simple.</p>
+					<p>This plugin came about because I wanted control over what was displayed. I've used other widgets and plugins and found that none fit my needs. The biggest issue was not having control over the code it was spitting out. This included some plugins giving me crazy HTML with a bunch of classes. Why not write your own HTML? <strong>simpleWeather</strong> gives you all the available data and you choose what to use and how it should be display. This includes using your own HTML and CSS. More then that this means you can use the plugin for more then just displaying current weather. An example would be to create a dynamic design that changes based on the weather such as a header or images. <strong>simpleWeather</strong> makes it... well simple.</p>
 				</article>
 
 				<article>
@@ -152,14 +152,14 @@
 		<hr>
 
 		<div class="footer">
-			<p class="pull-left">Developed by <a href="http://jamesfleeting.com" title="Yes, that James Fleeting.">James Fleeting</a> - <a href="http://twitter.com/twofivethreetwo" title="Follow @twofivethreetwo">@twofivethreetwo</a></p>
+			<p class="pull-left">Developed by <a href="http://jamesfleeting.com" title="Yes, that James Fleeting.">James Fleeting</a> - <a href="http://twitter.com/twofivethreetwo" title="Follow @twofivethreetwo">@twofivethreetwo</a><br />
+				Logo by <a href="http://blainebowers.com" title="BlaineBowers.com">Blaine Bowers</a> - <a href="http://twitter.com/flyingnowhere" title="Follow @flyingnowhere">@flyingnowhere</a></p>
 			<p class="pull-right muted">monkeeSee, monkeeDo, <a href="http://monkeecreate.com" title="monkeeCreate">monkeeCreate</a></p>
 		</div>
 	</div> <!-- /container -->
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.8.2.min.js"><\/script>')</script>
-	<script src="js/jquery.simpleWeather-2.0.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=111455218918699";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
@@ -171,22 +171,6 @@
 		event.preventDefault();
 		$($(this).attr('href'))[0].scrollIntoView();
 		scrollBy(0, -offset);
-	});
-
-	$.simpleWeather({
-		zipcode: '76309',
-		unit: 'f',
-		success: function(weather) {
-			html = '<h2>'+weather.city+', '+weather.region+'</h2>';
-			html += '<img style="float:left;" width="125px" src="'+weather.image+'">';
-			html += '<p>'+weather.temp+'&deg; '+weather.units.temp+'<br /><span>'+weather.currently+'</span></p>';
-			html += '<a href="'+weather.link+'">View Forecast &raquo;</a>';
-
-			$("#weather").html(html);
-		},
-		error: function(error) {
-			$("#weather").html('<p>'+error+'</p>');
-		}
 	});
 
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
