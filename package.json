@@ -1,7 +1,7 @@
 {
-    "name": "simpleweather",
-    "version": "2.0.1",
-    "title": "simpleWeather",
+    "name": "simpleweather.js",
+    "version": "2.1",
+    "title": "simpleWeather.js",
     "author": {
         "name": "James Fleeting",
         "email": "hello@jamesfleeting.com",
@@ -16,7 +16,7 @@
     "dependencies": {
         "jquery": ">1.5"
     },
-    "description": "A simple jQuery plugin to display the weather information for any location. The data is pulled from the public Yahoo! Weather feed via the YQL API.",
+    "description": "A simple jQuery plugin to display the current weather information for any location using Yahoo! Weather. Developed by James Fleeting.",
     "keywords": [
         "weather",
         "yahoo",
