@@ -52,6 +52,10 @@ p {
 	line-height: 1;
 }
 
+.jumbotron .muted {
+	font-size: 11px;
+}
+
 .jumbotron .btn-large {
 	font-size: 21px;
 	padding: 14px 24px;
