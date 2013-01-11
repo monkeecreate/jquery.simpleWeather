@@ -36,7 +36,7 @@
 <body data-spy="scroll" data-target="#navbar" data-offset="80">
 	<div id="fb-root"></div>
 	<div class="container-narrow">
-		<div id="navbar" class="masthead navbar-fixed-top">
+		<div id="navbar" class="masthead">
 			<ul class="nav nav-pills pull-right">
 				<li class="active"><a href="#home">Home</a></li>
 				<li><a href="#demo">Demo</a></li>
@@ -55,7 +55,7 @@
 
 			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v2.1</a>
 
-			<p class="muted">Last updated on November 17, 2012</p>
+			<p class="muted">Last updated on January 11, 2013</p>
 
 			<iframe src="http://ghbtns.com/github-btn.html?user=monkeecreate&repo=jquery.simpleWeather&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this awesome jquery weather plugin!" data-via="twofivethreetwo" data-related="twofivethreetwo">Tweet</a>
@@ -80,9 +80,204 @@
 		<div id="usage" class="row-fluid">
 			<div class="span12">
 				<h3>Example Usage</h3>
-				<p>The demo gives you a real world example of how to display and style the weather. Below is the full usage with every piece of data that is available for you to use. In most cases you don't want to just copy and paste the below but it does let you easily setup a test page to view all the data returned.</p>
+				<p>The demo above gives you a real world example of how to display and style the weather. The table below shows every piece of data that is available for you to use. In most cases you won't need the majority of it however I make it all available so you can use whatever you want. The example values with links (thumbnail, image, link) all return the url, I just linked it so the table didn't look cluttered.</p>
 
-				<script src="https://gist.github.com/3983006.js"> </script>
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Data</th>
+							<th>Description</th>
+							<th>Example value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>title</td>
+							<td>Returns the generic title for the weather being displayed.</td>
+							<td>Conditions for Austin, TX at 2:50 pm CST</td>
+						</tr>
+						<tr>
+							<td>temp</td>
+							<td>Returns current temperature for selected location without unit.</td>
+							<td>75</td>
+						</tr>
+						<tr>
+							<td>tempAlt</td>
+							<td>If unit is set to f (fahrenheit), this will return the current temp in c (celsius) or or vice versa.</td>
+							<td>24</td>
+						</tr>
+						<tr>
+							<td>code</td>
+							<td>Returns the current condition code. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>.</td>
+							<td>32</td>
+						</tr>
+						<tr>
+							<td>todayCode</td>
+							<td>Returns the condition code for the day vs current. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>.</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>units.temp</td>
+							<td>Returns the unit in which temp is displayed, f for Fahrenheit or c for Celsius. This can be changed when calling simpleWeather.</td>
+							<td>f</td>
+						</tr>
+						<tr>
+							<td>units.distance</td>
+							<td>Returns the unit in which distance is displayed, mi for miles or km for kilometers.</td>
+							<td>mi</td>
+						</tr>
+						<tr>
+							<td>units.pressure</td>
+							<td>Returns the units of barometric pressure, in for pounds per square inch or mb for millibars.</td>
+							<td>in</td>
+						</tr>
+						<tr>
+							<td>units.speed</td>
+							<td>Returns the unit in which speed is displayed, mph for miles per hour or kph for kilometers per hour.</td>
+							<td>mph</td>
+						</tr>
+						<tr>
+							<td>currently</td>
+							<td>Returns a textual description of the current condition.</td>
+							<td>Partly Cloudy</td>
+						</tr>
+						<tr>
+							<td>high</td>
+							<td>Returns the forecasted high temp for the day.</td>
+							<td>82</td>
+						</tr>
+						<tr>
+							<td>low</td>
+							<td>Returns the forecasted low temp for the day.</td>
+							<td>47</td>
+						</tr>
+						<tr>
+							<td>forecast</td>
+							<td>Returns a textual description of the condition for the day vs current.</td>
+							<td>Sunny</td>
+						</tr>
+						<tr>
+							<td>wind.chill</td>
+							<td>Returns the current wind chill in degrees.</td>
+							<td>71</td>
+						</tr>
+						<tr>
+							<td>wind.direction</td>
+							<td>Returns the current wind direction.</td>
+							<td>NW</td>
+						</tr>
+						<tr>
+							<td>wind.speed</td>
+							<td>Returns the current wind speed. Use with units.speed to display mph or kph.</td>
+							<td>13</td>
+						</tr>
+						<tr>
+							<td>humidity</td>
+							<td>Returns current humidity in precent.</td>
+							<td>63</td>
+						</tr>
+						<tr>
+							<td>heatindex</td>
+							<td>Returns the current heatindex.</td>
+							<td>71</td>
+						</tr>
+						<tr>
+							<td>pressure</td>
+							<td></td>
+							<td>29.85</td>
+						</tr>
+						<tr>
+							<td>rising</td>
+							<td>Returns the state of the barometric pressure; steady (0), rising (1), or falling (2).</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>visibility</td>
+							<td>Returns current visibility in distance. Use with units.distance for mi or km.</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>sunrise</td>
+							<td>Returns the time of sunrise for today.</td>
+							<td>7:26am</td>
+						</tr>
+						<tr>
+							<td>sunset</td>
+							<td>Returns the time of sunset for today.</td>
+							<td>5:47pm</td>
+						</tr>
+						<tr>
+							<td>thumbnail</td>
+							<td>Returns the thumbnail image url for the current condition code and time of day.</td>
+							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32ds.png">View Image</a></td>
+						</tr>
+						<tr>
+							<td>image</td>
+							<td>Returns the full size image url for the current condition code and time of day.</td>
+							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
+						</tr>
+						<tr>
+							<td>tomorrow.high</td>
+							<td>Returns the forecasted high temp for tomorrow.</td>
+							<td>78</td>
+						</tr>
+						<tr>
+							<td>tomorrow.low</td>
+							<td>Returns the forecasted low temp for tomorrow.</td>
+							<td>41</td>
+						</tr>
+						<tr>
+							<td>tomorrow.forecast</td>
+							<td>Returns a textual description of the condition for tomorrow.</td>
+							<td>Thunderstorms</td>
+						</tr>
+						<tr>
+							<td>tomorrow.code</td>
+							<td>Returns the condition code for tomorrow. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>.</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>tomorrow.date</td>
+							<td>Returns the date for tomorrow.</td>
+							<td>12 Jan 2013</td>
+						</tr>
+						<tr>
+							<td>tomorrow.day</td>
+							<td>Returns the day for tomorrow.</td>
+							<td>Sat</td>
+						</tr>
+						<tr>
+							<td>tomorrow.image</td>
+							<td>Returns the full size image url for tomorrow's condition code and time of day.</td>
+							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
+						</tr>
+						<tr>
+							<td>city</td>
+							<td>Returns the city name.</td>
+							<td>Austin</td>
+						</tr>
+						<tr>
+							<td>country</td>
+							<td>Returns the two character country code.</td>
+							<td>US</td>
+						</tr>
+						<tr>
+							<td>region</td>
+							<td>Returns the state, territory, or region.</td>
+							<td>TX</td>
+						</tr>
+						<tr>
+							<td>updated</td>
+							<td>Returns when the weather feed was last updated.</td>
+							<td>Fri, 11 Jan 2013 3:50 pm CST</td>
+						</tr>
+						<tr>
+							<td>link</td>
+							<td>Returns a url to the full forecast on Yahoo! Weather.</td>
+							<td><a href="http://us.rd.yahoo.com/dailynews/rss/weather/Austin__TX/*http://weather.yahoo.com/forecast/USTX0057_f.html">View Forecast</a></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<hr>
