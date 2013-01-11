@@ -8,7 +8,7 @@
  * Developed by James Fleeting <@twofivethreetwo>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.1 - Last updated: November 17 2012
+ * Version 2.1 - Last updated: January 11 2013
  */
 (function($) {
 	"use strict";
