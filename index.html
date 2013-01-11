@@ -30,10 +30,10 @@
 		<div id="navbar" class="masthead">
 			<ul class="nav nav-pills pull-right">
 				<li class="active"><a href="#home">Home</a></li>
-				<li><a href="#demo">Demo</a></li>
-				<li><a href="#usage">Usage</a></li>
-				<li><a href="#docs">Docs</a></li>
-				<li><a href="#faq">FAQ</a></li>
+				<li><a href="#demo" class="jump">Demo</a></li>
+				<li><a href="#usage" class="jump">Usage</a></li>
+				<li><a href="#docs" class="jump">Docs</a></li>
+				<li><a href="#faq" class="jump">FAQ</a></li>
 				<li><a class="label label-default" href="https://github.com/monkeecreate/jquery.simpleWeather/" title="simpleWeather on GitHub">GitHub Project</a></li>
 			</ul>
 
@@ -358,7 +358,7 @@
 
 	<script>
 	var offset = 70;
-	$('#navbar li a').click(function(event) {
+	$('#navbar li .jump').click(function(event) {
 		event.preventDefault();
 		$($(this).attr('href'))[0].scrollIntoView();
 		scrollBy(0, -offset);
