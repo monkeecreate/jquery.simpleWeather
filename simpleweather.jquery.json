@@ -1,0 +1,33 @@
+{
+  "name": "simpleweather",
+  "title": "jQuery.simpleWeather",
+  "description": "A simple jQuery plugin to display the current weather information for any location using Yahoo! Weather. Developed by James Fleeting.",
+  "keywords": [
+    "weather",
+    "yahoo",
+    "simpleweather",
+    "simple",
+    "monkeecreate",
+    "weather data"
+  ],
+  "version": "2.1",
+  "author": {
+    "name": "James Fleeting",
+    "email": "hello@jamesfleeting.com",
+    "url": "http://jamesfleeting.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/monkeecreate/jquery.simpleWeather/blob/master/MIT-LICENSE.txt"
+    }
+  ],
+  "bugs": "https://github.com/monkeecreate/jquery.simpleWeather/issues",
+  "homepage": "http://simpleweather.monkeecreate.com",
+  "docs": "http://simpleweather.monkeecreate.com",
+  "download": "http://simpleweather.monkeecreate.com",
+  "demo": "http://simpleweather.monkeecreate.com",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
