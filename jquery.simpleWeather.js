@@ -1,5 +1,5 @@
 /*
- * simpleWeather.js
+ * simpleWeather
  * http://simpleweather.monkeecreate.com
  *
  * A simple jQuery plugin to display the current weather
@@ -8,7 +8,7 @@
  * Developed by James Fleeting <@twofivethreetwo>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.1 - Last updated: January 11 2013
+ * Version 2.1.1 - Last updated: January 17 2013
  */
 (function($) {
 	"use strict";
@@ -33,7 +33,7 @@
 			} else if(options.woeid !== '') {
 				weatherUrl += 'select * from weather.forecast where woeid='+options.woeid+' and u="'+options.unit+'"';
 			} else {
-				options.error("No location given. Please provide either a US zip code, WOEID or location.");
+				options.error("Could not retrieve weather due to an invalid WOEID or location.");
 				return false;
 			}
 
@@ -122,9 +122,9 @@
 						});
 					} else {
 						if (data.query.results === null) {
-							options.error("Invalid location given.");
+							options.error("An invalid WOEID or location was provided.");
 						} else {
-							options.error("Weather could not be displayed. Try again.");
+							options.error("There was an error retrieving the latest weather information. Please try again.");
 						}
 					}
 				}
