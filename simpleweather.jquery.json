@@ -8,9 +8,9 @@
     "simpleweather",
     "simple",
     "monkeecreate",
-    "weather data"
+    "weather-data"
   ],
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": {
     "name": "James Fleeting",
     "email": "hello@jamesfleeting.com",
@@ -29,5 +29,12 @@
   "demo": "http://simpleweather.monkeecreate.com",
   "dependencies": {
     "jquery": ">=1.5"
-  }
+  },
+  "maintainers": [
+    {
+      "name": "James Fleeting",
+      "email": "hello@jamesfleeting.com",
+      "url": "http://jamesfleeting.com"
+    }
+  ]
 }
