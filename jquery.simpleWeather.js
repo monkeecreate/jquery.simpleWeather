@@ -8,7 +8,7 @@
  * Developed by James Fleeting <@twofivethreetwo> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.2 - Last updated: April 30 2013
+ * Version 2.2.0 - Last updated: April 30 2013
  */
 (function($) {
 	"use strict";
