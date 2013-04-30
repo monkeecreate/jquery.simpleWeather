@@ -10,7 +10,7 @@
     "monkeecreate",
     "weather-data"
   ],
-  "version": "2.1.2",
+  "version": "2.2",
   "author": {
     "name": "James Fleeting",
     "email": "hello@jamesfleeting.com",
@@ -23,10 +23,10 @@
     }
   ],
   "bugs": "https://github.com/monkeecreate/jquery.simpleWeather/issues",
-  "homepage": "http://simpleweather.monkeecreate.com",
-  "docs": "http://simpleweather.monkeecreate.com",
-  "download": "http://simpleweather.monkeecreate.com",
-  "demo": "http://simpleweather.monkeecreate.com",
+  "homepage": "http://simpleweather.com",
+  "docs": "http://simpleweather.com",
+  "download": "http://simpleweather.com",
+  "demo": "http://simpleweather.com",
   "dependencies": {
     "jquery": ">=1.5"
   },

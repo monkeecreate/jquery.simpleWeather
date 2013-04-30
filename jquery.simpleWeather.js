@@ -1,14 +1,14 @@
 /*
  * simpleWeather
- * http://simpleweather.monkeecreate.com
+ * http://simpleweatherjs.com
  *
  * A simple jQuery plugin to display the current weather
  * information for any location using Yahoo! Weather.
  *
- * Developed by James Fleeting <@twofivethreetwo>
+ * Developed by James Fleeting <@twofivethreetwo> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.1.2 - Last updated: January 25 2013
+ * Version 2.2 - Last updated: April 30 2013
  */
 (function($) {
 	"use strict";
@@ -66,9 +66,19 @@
 							}
 
 							if(options.unit === "f") {
+								var unitAlt = "c";
 								var tempAlt = Math.round((5.0/9.0)*(result.item.condition.temp-32.0));
+								var highAlt = Math.round((5.0/9.0)*(result.item.forecast[0].high-32.0));
+								var lowAlt = Math.round((5.0/9.0)*(result.item.forecast[0].low-32.0));
+								var tomorrowHighAlt = Math.round((5.0/9.0)*(result.item.forecast[1].high-32.0));
+								var tomorrowLowAlt = Math.round((5.0/9.0)*(result.item.forecast[1].low-32.0));
 							} else {
+								var unitAlt = "f";
 								var tempAlt = Math.round((9.0/5.0)*result.item.condition.temp+32.0);
+								var highAlt = Math.round((9.0/5.0)*result.item.forecast[0].high+32.0);
+								var lowAlt = Math.round((9.0/5.0)*result.item.forecast[0].low+32.0);
+								var tomorrowHighAlt = Math.round((5.0/9.0)*(result.item.forecast[1].high+32.0));
+								var tomorrowLowAlt = Math.round((5.0/9.0)*(result.item.forecast[1].low+32.0));
 							}
 
 							var weather = {
@@ -81,11 +91,14 @@
 									temp: result.units.temperature,
 									distance: result.units.distance,
 									pressure: result.units.pressure,
-									speed: result.units.speed
+									speed: result.units.speed,
+									tempAlt: unitAlt
 								},
 								currently: result.item.condition.text,
 								high: result.item.forecast[0].high,
+								highAlt: highAlt,
 								low: result.item.forecast[0].low,
+								lowAlt: lowAlt,
 								forecast: result.item.forecast[0].text,
 								wind:{
 									chill: result.wind.chill,
@@ -104,7 +117,9 @@
 								image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+".png",
 								tomorrow:{
 									high: result.item.forecast[1].high,
+									highAlt: tomorrowHighAlt,
 									low: result.item.forecast[1].low,
+									lowAlt: tomorrowLowAlt,
 									forecast: result.item.forecast[1].text,
 									code: result.item.forecast[1].code,
 									date: result.item.forecast[1].date,
