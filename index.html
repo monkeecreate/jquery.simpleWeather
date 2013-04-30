@@ -44,9 +44,9 @@
 			<h1>Whoa, a weather plugin?</h1>
 			<p class="lead">A simple jQuery plugin to display the current weather information for any location using Yahoo! Weather. Developed by <a href="http://twitter.com/twofivethreetwo">James Fleeting</a>.</p>
 
-			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v2.1.2</a>
+			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v2.2</a>
 
-			<p class="muted">Last updated on January 25, 2013</p>
+			<p class="muted">Last updated on April 30, 2013</p>
 
 			<iframe src="http://ghbtns.com/github-btn.html?user=monkeecreate&repo=jquery.simpleWeather&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this awesome jquery weather plugin!" data-via="twofivethreetwo" data-related="twofivethreetwo">Tweet</a>
@@ -128,6 +128,11 @@
 							<td>mph</td>
 						</tr>
 						<tr>
+							<td>units.tempAlt</td>
+							<td>Returns the opposite from units.temp (if Fahrenheit, this will return the temp in Celsuis).</td>
+							<td>mph</td>
+						</tr>
+						<tr>
 							<td>currently</td>
 							<td>Returns a textual description of the current condition.</td>
 							<td>Partly Cloudy</td>
@@ -138,9 +143,19 @@
 							<td>82</td>
 						</tr>
 						<tr>
+							<td>highAlt</td>
+							<td>Returns the opposite from high (if Fahrenheit, this will return the temp in Celsuis).</td>
+							<td>82</td>
+						</tr>
+						<tr>
 							<td>low</td>
 							<td>Returns the forecasted low temp for the day.</td>
 							<td>47</td>
+						</tr>
+						<tr>
+							<td>lowAlt</td>
+							<td>Returns the opposite from low (if Fahrenheit, this will return the temp in Celsuis).</td>
+							<td>82</td>
 						</tr>
 						<tr>
 							<td>forecast</td>
@@ -213,9 +228,19 @@
 							<td>78</td>
 						</tr>
 						<tr>
+							<td>tomorrow.highAlt</td>
+							<td>Returns the opposite from tomorrow.high (if Fahrenheit, this will return the temp in Celsuis).</td>
+							<td>82</td>
+						</tr>
+						<tr>
 							<td>tomorrow.low</td>
 							<td>Returns the forecasted low temp for tomorrow.</td>
 							<td>41</td>
+						</tr>
+						<tr>
+							<td>tomorrow.lowAlt</td>
+							<td>Returns the opposite from tomorrow.low (if Fahrenheit, this will return the temp in Celsuis).</td>
+							<td>82</td>
 						</tr>
 						<tr>
 							<td>tomorrow.forecast</td>
@@ -349,8 +374,8 @@
 		</div>
 	</div> <!-- /container -->
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery-1.8.2.min.js"><\/script>')</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-2.0.0.min.js"><\/script>')</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
 	var offset = 70;
