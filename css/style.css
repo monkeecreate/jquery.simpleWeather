@@ -60,6 +60,11 @@ p {
 	padding: 14px 24px;
 }
 
+pre.install {
+	width: 276px
+	margin: 0 auto 25px;
+}
+
 .twitter-share-button {
 	width: 90px !important;
 }
