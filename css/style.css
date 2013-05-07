@@ -73,6 +73,11 @@ pre.install {
 	width: 70px !important;
 }
 
+.bsap {
+	width: 380px;
+	margin: 35px auto 0;
+}
+
 /* Supporting marketing content */
 .marketing {
 	margin: 60px 0;
