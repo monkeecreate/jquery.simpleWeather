@@ -8,7 +8,7 @@
  * Developed by James Fleeting <@twofivethreetwo> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.2.0 - Last updated: April 30 2013
+ * Version 2.3.0 - Last updated: June 16 2013
  */
 (function($) {
 	"use strict";
@@ -40,7 +40,7 @@
 			$.getJSON(
 				weatherUrl,
 				function(data) {
-					if(data !== null && data.query.results !== null) {
+					if(data !== null && data.query.results !== null && data.query.results.channel.description !== 'Yahoo! Weather Error') {
 						$.each(data.query.results, function(i, result) {
 							if (result.constructor.toString().indexOf("Array") !== -1) {
 								result = result[0];
@@ -87,6 +87,7 @@
 								tempAlt: tempAlt,
 								code: result.item.condition.code,
 								todayCode: result.item.forecast[0].code,
+								timeOfDay: timeOfDay,
 								units:{
 									temp: result.units.temperature,
 									distance: result.units.distance,

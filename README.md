@@ -10,7 +10,7 @@ bower install jquery-simpleweather
 
 **[CDNJS](http://cdnjs.com/)**
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.2.0/jquery.simpleWeather.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.3.0/jquery.simpleWeather.min.js"></script>
 ```
 
 **Git**
