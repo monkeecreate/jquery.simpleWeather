@@ -23,3 +23,7 @@ git clone git://github.com/monkeecreate/jquery.simpleWeather.git
 
 ## Questions?
 If you have any questions or problems hit me up on [twitter](http://twitter.com/twofivethreetwo) or create a [new issue](https://github.com/monkeecreate/jquery.simpleWeather/issues/new). Don't forget to check the documentation and FAQ at [simpleweatherjs.com](http://simpleweatherjs.com).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/monkeecreate/jquery.simpleweather/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
