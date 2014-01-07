@@ -5,10 +5,10 @@
  * A simple jQuery plugin to display the current weather
  * information for any location using Yahoo! Weather.
  *
- * Developed by James Fleeting <@twofivethreetwo> <http://iwasasuperhero.com>
+ * Developed by James Fleeting <@fleetingftw> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.3.0 - Last updated: June 16 2013
+ * Version 2.4.0 - Last updated: November 4 2013
  */
 (function($) {
 	"use strict";
@@ -47,8 +47,13 @@
 							}
 
 							var currentDate = new Date();
-							var sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
-							var sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
+							if(result.astronomy !== null) {
+								var sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
+								var sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
+							} else {
+								var sunRise = '';
+								var sunSet = '';
+							}
 
 							if(currentDate>sunRise && currentDate<sunSet) {
 								var timeOfDay = 'd';
@@ -56,8 +61,12 @@
 								var timeOfDay = 'n';
 							}
 
-							var compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
-							var windDirection = compass[Math.round(result.wind.direction / 22.5)];
+							if(result.wind.direction !== null) {
+								var compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
+								var windDirection = compass[Math.round(result.wind.direction / 22.5)];
+							} else {
+								var windDirection = '';
+							}
 
 							if(result.item.condition.temp < 80 && result.atmosphere.humidity < 40) {
 								var heatIndex = -42.379+2.04901523*result.item.condition.temp+10.14333127*result.atmosphere.humidity-0.22475541*result.item.condition.temp*result.atmosphere.humidity-6.83783*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))-5.481717*(Math.pow(10, -2))*(Math.pow(result.atmosphere.humidity, 2))+1.22874*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))*result.atmosphere.humidity+8.5282*(Math.pow(10, -4))*result.item.condition.temp*(Math.pow(result.atmosphere.humidity, 2))-1.99*(Math.pow(10, -6))*(Math.pow(result.item.condition.temp, 2))*(Math.pow(result.atmosphere.humidity,2));
