@@ -56,11 +56,11 @@
 			<h1>Whoa, a weather plugin?</h1>
 			<p class="lead">A simple jQuery plugin to display the current weather information for any location using Yahoo! Weather. Developed by <a href="http://twitter.com/fleetingftw">James Fleeting</a>.</p>
 
-			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v2.3.0</a>
+			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v2.4.0</a>
 
-			<p class="muted">Last updated on June 16, 2013</p>
+			<p class="muted">Last updated on January 22, 2013</p>
 
-			<pre class="install"><code>bower install jquery-simpleweather</code></pre>
+			<pre class="install"><code>bower install simpleWeather</code></pre>
 
 			<iframe src="http://ghbtns.com/github-btn.html?user=monkeecreate&repo=jquery.simpleWeather&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this awesome jquery weather plugin!" data-via="fleetingftw" data-related="fleetingftw">Tweet</a>
@@ -291,6 +291,51 @@
 							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
 						</tr>
 						<tr>
+							<td>forecasts.XX.high</td>
+							<td>Returns the forecasted high temp for XX day out. (XX = one, two, three, or four)</td>
+							<td>78</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.highAlt</td>
+							<td>Returns the opposite from forecasts.XX.high (if Fahrenheit, this will return the temp in Celsuis) (XX = one, two, three, or four).</td>
+							<td>25</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.low</td>
+							<td>Returns the forecasted low temp for XX day out. (XX = one, two, three, or four)</td>
+							<td>41</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.lowAlt</td>
+							<td>Returns the opposite from forecasts.XX.low (if Fahrenheit, this will return the temp in Celsuis) (XX = one, two, three, or four).</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.forecast</td>
+							<td>Returns a textual description of the condition for XX day. (XX = one, two, three, or four)</td>
+							<td>Thunderstorms</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.code</td>
+							<td>Returns the condition code for XX day. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>. (XX = one, two, three, or four)</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.date</td>
+							<td>Returns the date for XX day. (XX = one, two, three, or four)</td>
+							<td>12 Jan 2013</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.day</td>
+							<td>Returns the day for XX day. (XX = one, two, three, or four)</td>
+							<td>Sat</td>
+						</tr>
+						<tr>
+							<td>forecasts.XX.image</td>
+							<td>Returns the full size image url for XX day's condition code and time of day. (XX = one, two, three, or four)</td>
+							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
+						</tr>
+						<tr>
 							<td>city</td>
 							<td>Returns the city name.</td>
 							<td>Austin</td>
@@ -359,7 +404,7 @@
 
 				<article>
 					<h4 class="text-info"><span>4</span> Is it possible to display the forecast for the week?</h4>
-					<p>The Yahoo! Weather API currently only returns today and tomorrow's weather along with providing a link to view the full forecast. At the moment I'm unaware of a way to get a week.</p>
+					<p>As of <strong>v2.4.0</strong> Yahoo! Weather returns a five day forecast. You can access that data using `forecasts.one.high` or `forecasts.two.high`. You can do this for one through four. Reference the table above for complete data returned. Prior to v2.4.0 the Yahoo! Weather API only returned today and tomorrow's weather along with providing a link to view the full forecast.</p>
 				</article>
 
 				<article>
