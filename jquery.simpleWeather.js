@@ -8,7 +8,7 @@
  * Developed by James Fleeting <@fleetingftw> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.4.0 - Last updated: November 4 2013
+ * Version 2.4.0 - Last updated: January 22 2013
  */
 (function($) {
 	"use strict";
@@ -47,13 +47,8 @@
 							}
 
 							var currentDate = new Date();
-							if(result.astronomy !== null) {
-								var sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
-								var sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
-							} else {
-								var sunRise = '';
-								var sunSet = '';
-							}
+							var sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
+							var sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
 
 							if(currentDate>sunRise && currentDate<sunSet) {
 								var timeOfDay = 'd';
@@ -61,12 +56,8 @@
 								var timeOfDay = 'n';
 							}
 
-							if(result.wind.direction !== null) {
-								var compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
-								var windDirection = compass[Math.round(result.wind.direction / 22.5)];
-							} else {
-								var windDirection = '';
-							}
+							var compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
+							var windDirection = compass[Math.round(result.wind.direction / 22.5)];
 
 							if(result.item.condition.temp < 80 && result.atmosphere.humidity < 40) {
 								var heatIndex = -42.379+2.04901523*result.item.condition.temp+10.14333127*result.atmosphere.humidity-0.22475541*result.item.condition.temp*result.atmosphere.humidity-6.83783*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))-5.481717*(Math.pow(10, -2))*(Math.pow(result.atmosphere.humidity, 2))+1.22874*(Math.pow(10, -3))*(Math.pow(result.item.condition.temp, 2))*result.atmosphere.humidity+8.5282*(Math.pow(10, -4))*result.item.condition.temp*(Math.pow(result.atmosphere.humidity, 2))-1.99*(Math.pow(10, -6))*(Math.pow(result.item.condition.temp, 2))*(Math.pow(result.atmosphere.humidity,2));
@@ -81,6 +72,14 @@
 								var lowAlt = Math.round((5.0/9.0)*(result.item.forecast[0].low-32.0));
 								var tomorrowHighAlt = Math.round((5.0/9.0)*(result.item.forecast[1].high-32.0));
 								var tomorrowLowAlt = Math.round((5.0/9.0)*(result.item.forecast[1].low-32.0));
+								var forecastOneHighAlt = Math.round((5.0/9.0)*(result.item.forecast[1].high-32.0));
+								var forecastOneLowAlt = Math.round((5.0/9.0)*(result.item.forecast[1].low-32.0));
+								var forecastTwoHighAlt = Math.round((5.0/9.0)*(result.item.forecast[2].high-32.0));
+								var forecastTwoLowAlt = Math.round((5.0/9.0)*(result.item.forecast[2].low-32.0));
+								var forecastThreeHighAlt = Math.round((5.0/9.0)*(result.item.forecast[3].high-32.0));
+								var forecastThreeLowAlt = Math.round((5.0/9.0)*(result.item.forecast[3].low-32.0));
+								var forecastFourHighAlt = Math.round((5.0/9.0)*(result.item.forecast[4].high-32.0));
+								var forecastFourLowAlt = Math.round((5.0/9.0)*(result.item.forecast[4].low-32.0));
 							} else {
 								var unitAlt = "f";
 								var tempAlt = Math.round((9.0/5.0)*result.item.condition.temp+32.0);
@@ -88,6 +87,14 @@
 								var lowAlt = Math.round((9.0/5.0)*result.item.forecast[0].low+32.0);
 								var tomorrowHighAlt = Math.round((5.0/9.0)*(result.item.forecast[1].high+32.0));
 								var tomorrowLowAlt = Math.round((5.0/9.0)*(result.item.forecast[1].low+32.0));
+								var forecastOneHighAlt = Math.round((5.0/9.0)*(result.item.forecast[1].high+32.0));
+								var forecastOneLowAlt = Math.round((5.0/9.0)*(result.item.forecast[1].low+32.0));
+								var forecastTwoHighAlt = Math.round((5.0/9.0)*(result.item.forecast[2].high+32.0));
+								var forecastTwoLowAlt = Math.round((5.0/9.0)*(result.item.forecast[2].low+32.0));
+								var forecastThreeHighAlt = Math.round((5.0/9.0)*(result.item.forecast[3].high+32.0));
+								var forecastThreeLowAlt = Math.round((5.0/9.0)*(result.item.forecast[3].low+32.0));
+								var forecastFourHighAlt = Math.round((5.0/9.0)*(result.item.forecast[4].high+32.0));
+								var forecastFourLowAlt = Math.round((5.0/9.0)*(result.item.forecast[4].low+32.0));
 							}
 
 							var weather = {
@@ -135,6 +142,52 @@
 									date: result.item.forecast[1].date,
 									day: result.item.forecast[1].day,
 									image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
+								},
+								forecasts:{
+									one:{
+										high: result.item.forecast[1].high,
+										highAlt: forecastOneHighAlt,
+										low: result.item.forecast[1].low,
+										lowAlt: forecastOneLowAlt,
+										forecast: result.item.forecast[1].text,
+										code: result.item.forecast[1].code,
+										date: result.item.forecast[1].date,
+										day: result.item.forecast[1].day,
+										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
+									},
+									two:{
+										high: result.item.forecast[2].high,
+										highAlt: forecastTwoHighAlt,
+										low: result.item.forecast[2].low,
+										lowAlt: forecastTwoLowAlt,
+										forecast: result.item.forecast[2].text,
+										code: result.item.forecast[2].code,
+										date: result.item.forecast[2].date,
+										day: result.item.forecast[2].day,
+										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[2].code+"d.png"
+									},
+									three:{
+										high: result.item.forecast[3].high,
+										highAlt: forecastThreeHighAlt,
+										low: result.item.forecast[3].low,
+										lowAlt: forecastThreeLowAlt,
+										forecast: result.item.forecast[3].text,
+										code: result.item.forecast[3].code,
+										date: result.item.forecast[3].date,
+										day: result.item.forecast[3].day,
+										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[3].code+"d.png"
+									},
+									four:{
+										high: result.item.forecast[4].high,
+										highAlt: forecastFourHighAlt,
+										low: result.item.forecast[4].low,
+										lowAlt: forecastFourLowAlt,
+										forecast: result.item.forecast[4].text,
+										code: result.item.forecast[4].code,
+										date: result.item.forecast[4].date,
+										day: result.item.forecast[4].day,
+										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[4].code+"d.png"
+									},
 								},
 								city: result.location.city,
 								country: result.location.country,

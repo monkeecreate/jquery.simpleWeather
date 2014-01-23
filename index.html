@@ -52,7 +52,6 @@
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 </head>
-
 <body>
 	<div class="container-narrow">
 		<div class="jumbotron">
@@ -90,7 +89,6 @@
 				<p>This demo is still extremely simple, just shows what you can do with a little CSS to spice it up.</p>
 
 				<iframe style="width: 100%; height: 350px; box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);" src="http://jsfiddle.net/fleeting/a4hbL/embedded/result,js,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
 			</div>
 		</div>
 		<hr>
@@ -98,37 +96,5 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 	<script src="http:////cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
-	<script src="jquery.simpleWeather-2.3.min.js"></script>
-	<script>
-		$(function() {
-			$.simpleWeather({
-				zipcode: '',
-				woeid: '2357536',
-				location: '',
-				unit: 'f',
-				success: function(weather) {
-					html = '<h3>'+weather.city+', '+weather.region+' '+weather.country+'</h3>';
-					html += '<p><strong>Today\'s High</strong>: '+weather.high+'&deg; '+weather.units.temp+' - <strong>Today\'s Low</strong>: '+weather.low+'&deg; '+weather.units.temp+'</p>';
-					html += '<p><strong>Current Temp</strong>: '+weather.temp+'&deg; '+weather.units.temp+' ('+weather.tempAlt+'&deg; C)</p>';
-					html += '<p><strong>Condition Code</strong>: '+weather.code+'</p>';
-					html += '<p><strong>Thumbnail</strong>: <img src="'+weather.thumbnail+'"></p>';
-					html += '<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+' <strong>Wind Chill</strong>: '+weather.wind.chill+'</p>';
-					html += '<p><strong>Currently</strong>: '+weather.currently+' - <strong>Forecast</strong>: '+weather.forecast+'</p>';
-					html += '<p><img src="'+weather.image+'"></p>';
-					html += '<p><strong>Humidity</strong>: '+weather.humidity+' <strong>Pressure</strong>: '+weather.pressure+' <strong>Rising</strong>: '+weather.rising+' <strong>Visibility</strong>: '+weather.visibility+'</p>';
-					html += '<p><strong>Heat Index</strong>: '+weather.heatindex+'</p>';
-					html += '<p><strong>Sunrise</strong>: '+weather.sunrise+' - <strong>Sunset</strong>: '+weather.sunset+'</p>';
-					html += '<p><strong>Tomorrow\'s Date</strong>: '+weather.tomorrow.day+' '+weather.tomorrow.date+'<br /><strong>Tomorrow\'s High/Low</strong>: '+weather.tomorrow.high+'/'+weather.tomorrow.low+'<br /><strong>Tomorrow\'s Condition Code</strong>: '+weather.tomorrow.code+'<br /><strong>Tomorrow\'s Forecast</strong>: '+weather.tomorrow.forecast+'<br /> <strong>Tomorrow\'s Image</strong>: '+weather.tomorrow.image+'</p>';
-					html += '<p><strong>Last updated</strong>: '+weather.updated+'</p>';
-					html += '<p><a href="'+weather.link+'">View forecast at Yahoo! Weather</a></p>';
-
-					$("#weather").html(html);
-				},
-				error: function(error) {
-					$("#weather").html('<p>'+error+'</p>');
-				}
-			});
-		});
-	</script>
 </body>
 </html>

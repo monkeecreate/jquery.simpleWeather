@@ -2,7 +2,7 @@
   "name": "simpleWeather",
   "description": "A simple jQuery plugin to display the current weather information for any location.",
   "main": "jquery.simpleWeather.js",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "homepage": "http://simpleweatherjs.com",
   "authors": [
     "James Fleeting <hello@jamesfleeting.com>"

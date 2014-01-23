@@ -1,0 +1,33 @@
+{
+  "name": "simpleweather",
+  "version": "2.4.0",
+  "description": "A simple jQuery plugin to display the current weather information for any location.",
+  "keywords": [
+    "jquery",
+    "javascript",
+    "weather",
+    "plugin",
+    "simple"
+  ],
+  "homepage": "http://simpleweatherjs.com",
+  "bugs": "https://github.com/monkeecreate/jquery.simpleWeather/issues",
+  "author": {
+    "name": "James Fleeting",
+    "email": "hello@jamesfleeting.com",
+    "url": "https://github.com/fleeting"
+  },
+  "main": "jquery.simpleWeather.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/monkeecreate/jquery.simpleWeather.git"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
