@@ -8,6 +8,11 @@ A simple jQuery plugin to display the current weather information for any locati
 bower install simpleWeather
 ```
 
+**[Component(1)](http://component.io/)**
+```shell
+component install monkeecreate/jquery.simpleWeather
+```
+
 **[CDNJS](http://cdnjs.com/libraries/jquery.simpleWeather/)**
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.4.0/jquery.simpleWeather.min.js"></script>
