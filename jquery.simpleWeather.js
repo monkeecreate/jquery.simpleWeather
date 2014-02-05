@@ -8,16 +8,15 @@
  * Developed by James Fleeting <@fleetingftw> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>
  *
- * Version 2.4.0 - Last updated: January 22 2013
+ * Version 2.5.0 - Last updated: February 5 2013
  */
 (function($) {
 	"use strict";
 	$.extend({
 		simpleWeather: function(options){
 			options = $.extend({
-				zipcode: '',
-				woeid: '2357536',
 				location: '',
+				woeid: '2357536',
 				unit: 'f',
 				success: function(weather){},
 				error: function(message){}
@@ -25,15 +24,13 @@
 
 			var now = new Date();
 
-			var weatherUrl = 'http://query.yahooapis.com/v1/public/yql?format=json&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&diagnostics=true&callback=?&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
+			var weatherUrl = '//query.yahooapis.com/v1/public/yql?format=json&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&diagnostics=true&callback=?&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=';
 			if(options.location !== '') {
-				weatherUrl += 'select * from weather.forecast where location in (select id from weather.search where query="'+options.location+'") and u="'+options.unit+'"';
-			} else if(options.zipcode !== '') {
-				weatherUrl += 'select * from weather.forecast where location in ("'+options.zipcode+'") and u="'+options.unit+'"';
+				weatherUrl += 'select * from weather.forecast where woeid in (select woeid from geo.placefinder where text="'+options.location+'" and gflags="R") and u="'+options.unit+'"';
 			} else if(options.woeid !== '') {
 				weatherUrl += 'select * from weather.forecast where woeid='+options.woeid+' and u="'+options.unit+'"';
-			} else {
-				options.error("Could not retrieve weather due to an invalid WOEID or location.");
+      } else {
+				options.error("Could not retrieve weather due to an invalid location.");
 				return false;
 			}
 
@@ -44,16 +41,6 @@
 						$.each(data.query.results, function(i, result) {
 							if (result.constructor.toString().indexOf("Array") !== -1) {
 								result = result[0];
-							}
-
-							var currentDate = new Date();
-							var sunRise = new Date(currentDate.toDateString() +' '+ result.astronomy.sunrise);
-							var sunSet = new Date(currentDate.toDateString() +' '+ result.astronomy.sunset);
-
-							if(currentDate>sunRise && currentDate<sunSet) {
-								var timeOfDay = 'd';
-							} else {
-								var timeOfDay = 'n';
 							}
 
 							var compass = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
@@ -103,7 +90,6 @@
 								tempAlt: tempAlt,
 								code: result.item.condition.code,
 								todayCode: result.item.forecast[0].code,
-								timeOfDay: timeOfDay,
 								units:{
 									temp: result.units.temperature,
 									distance: result.units.distance,
@@ -130,8 +116,8 @@
 								sunrise: result.astronomy.sunrise,
 								sunset: result.astronomy.sunset,
 								description: result.item.description,
-								thumbnail: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+"s.png",
-								image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+timeOfDay+".png",
+								thumbnail: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+"ds.png",
+								image: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+"d.png",
 								tomorrow:{
 									high: result.item.forecast[1].high,
 									highAlt: tomorrowHighAlt,
@@ -141,7 +127,7 @@
 									code: result.item.forecast[1].code,
 									date: result.item.forecast[1].date,
 									day: result.item.forecast[1].day,
-									image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
+									image: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
 								},
 								forecasts:{
 									one:{
@@ -153,7 +139,7 @@
 										code: result.item.forecast[1].code,
 										date: result.item.forecast[1].date,
 										day: result.item.forecast[1].day,
-										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
+										image: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png"
 									},
 									two:{
 										high: result.item.forecast[2].high,
@@ -164,7 +150,7 @@
 										code: result.item.forecast[2].code,
 										date: result.item.forecast[2].date,
 										day: result.item.forecast[2].day,
-										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[2].code+"d.png"
+										image: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[2].code+"d.png"
 									},
 									three:{
 										high: result.item.forecast[3].high,
@@ -175,7 +161,7 @@
 										code: result.item.forecast[3].code,
 										date: result.item.forecast[3].date,
 										day: result.item.forecast[3].day,
-										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[3].code+"d.png"
+										image: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[3].code+"d.png"
 									},
 									four:{
 										high: result.item.forecast[4].high,
@@ -186,7 +172,7 @@
 										code: result.item.forecast[4].code,
 										date: result.item.forecast[4].date,
 										day: result.item.forecast[4].day,
-										image: "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[4].code+"d.png"
+										image: "//l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[4].code+"d.png"
 									},
 								},
 								city: result.location.city,
