@@ -2,7 +2,14 @@
 
 For a more complete changelog you can always check out the [commit log](https://github.com/monkeecreate/jquery.simpleWeather/commits/master).
 
-## v2.5 - February 5 2004
+## v2.6 - February 26 2014
+
+* Encoding URI for API call.
+* Fixed formatting issues.
+* Fixed alt temps bug.
+* Hat tip to @defvayne23 for the suggestions.
+
+## v2.5 - February 5 2014
 
 * Removed deprecated weather.search YQL table.
 * Added geo.placefinder YQL table for searching locations. This allows you to get your location in a more forgiving format than before including latitude and longitude.
