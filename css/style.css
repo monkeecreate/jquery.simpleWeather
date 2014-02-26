@@ -52,7 +52,9 @@ p {
 }
 
 .jumbotron .muted {
+	margin-top: 6px;
 	font-size: 11px;
+	line-height: 1.2;
 }
 
 .jumbotron .btn-large {
