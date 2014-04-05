@@ -2,8 +2,8 @@
  * simpleWeather
  * http://simpleweatherjs.com
  *
- * A simple jQuery plugin to display the current weather
- * information for any location using Yahoo! Weather.
+ * A simple jQuery plugin to display current weather data
+ * for any location and doesn't get in your way.
  *
  * Developed by James Fleeting <@fleetingftw> <http://iwasasuperhero.com>
  * Another project from monkeeCreate <http://monkeecreate.com>

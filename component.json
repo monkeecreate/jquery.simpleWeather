@@ -1,10 +1,10 @@
 {
   "name": "simpleWeather",
   "repo": "monkeecreate/jquery.simpleWeather",
-  "description": "A simple jQuery plugin to display the current weather information for any location.",
+  "description": "A simple jQuery plugin to display current weather data for any location and doesn't get in your way.",
   "version": "2.6.0",
-  "main": "jquery.simpleWeather-2.4.min.js",
-  "scripts": ["jquery.simpleWeather-2.4.min.js"],
+  "main": "jquery.simpleWeather.js",
+  "scripts": ["jquery.simpleWeather.js"],
   "dependencies": {
     "components/jquery": "*"
   },
