@@ -13,7 +13,7 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3, jQuery, Modernizr, Drought
-    YQL, git, Sublime Text 2
+    YQL, git, Github, Atom
 
 
 
@@ -39,5 +39,3 @@
                   0000  0000     01        001111100    00      01     00  01       101  00
                   1001  1001    100111111 00      101   00      01     00  00111111 101   000
                    10    00      00000001 01       10   00      01     10  00000000  0     100
-
-
