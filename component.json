@@ -4,12 +4,21 @@
   "description": "A simple jQuery plugin to display current weather data for any location and doesn't get in your way.",
   "version": "2.6.0",
   "main": "jquery.simpleWeather.js",
-  "scripts": ["jquery.simpleWeather.js"],
+  "scripts": [
+    "jquery.simpleWeather.js"
+  ],
   "dependencies": {
     "components/jquery": "*"
   },
   "author": "James Fleeting",
-  "keywords": ["jquery", "javascript", "weather", "plugin", "simple", "monkeecreate"],
+  "keywords": [
+    "jquery",
+    "javascript",
+    "weather",
+    "plugin",
+    "simple",
+    "monkeecreate"
+  ],
   "license": "MIT",
   "demo": "http://simpleweatherjs.com"
 }
