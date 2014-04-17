@@ -2,6 +2,13 @@
 
 For a more complete changelog you can always check out the [commit log](https://github.com/monkeecreate/jquery.simpleWeather/commits/master).
 
+## v2.7 - April 17 2014
+
+* Added gulp and a build/release process.
+* Fix for 3200 (not available) condition code and related image [#77]
+* Fixed my assumption of query being present [#72]. Hat tip to @rjackson.
+* Some general code cleanup.
+
 ## v2.6 - February 26 2014
 
 * Encoding URI for API call.
