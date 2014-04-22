@@ -81,6 +81,10 @@ pre.install {
 	text-align: left;
 }
 
+.bsa_it_p {
+	display: none !important;
+}
+
 /* Supporting marketing content */
 .marketing {
 	margin: 60px 0;
