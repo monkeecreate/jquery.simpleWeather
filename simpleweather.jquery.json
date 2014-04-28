@@ -28,7 +28,7 @@
   "download": "http://simpleweatherjs.com",
   "demo": "http://simpleweatherjs.com",
   "dependencies": {
-    "jquery": ">=1.5"
+    "jquery": ">=1.2"
   },
   "maintainers": [
     {

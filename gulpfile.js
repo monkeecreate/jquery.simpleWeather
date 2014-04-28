@@ -21,7 +21,7 @@ gulp.task('lint', function () {
 gulp.task('build', ['lint'], function () {
   return gulp.src(source)
     .pipe(rename(sourceMin))
-    .pipe(uglify({preserveComments: 'all'}))
+    .pipe(uglify({preserveComments: 'some'}))
     .pipe(size())
     .pipe(gulp.dest('./'));
 });

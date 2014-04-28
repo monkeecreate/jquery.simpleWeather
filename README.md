@@ -1,6 +1,6 @@
 # simpleWeather - jQuery Plugin [![GitHub version](https://badge.fury.io/gh/monkeecreate%2Fjquery.simpleWeather.png)](http://badge.fury.io/gh/monkeecreate%2Fjquery.simpleWeather)
 
-A simple jQuery plugin to display current weather data for any location and doesn't get in your way. Now supports HTML5 GeoLocation! Developed by [James Fleeting](http://twitter.com/fleetingftw). You can find demos and docs at [simpleweatherjs.com](http://simpleweatherjs.com).
+A simple jQuery plugin to display current weather data for any location and doesn't get in your way. Now supports HTML5 GeoLocation! Handcrafted with ♥ from Austin, Texas by [James Fleeting](http://twitter.com/fleetingftw). You can find demos and docs at [simpleweatherjs.com](http://simpleweatherjs.com).
 
 ## Get The Latest
 **[Bower](http://bower.io/)**
@@ -15,7 +15,7 @@ component install monkeecreate/jquery.simpleWeather
 
 **[CDNJS](http://cdnjs.com/libraries/jquery.simpleWeather/)**
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.6.0/jquery.simpleWeather.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.7.0/jquery.simpleWeather.min.js"></script>
 ```
 
 **Git**
