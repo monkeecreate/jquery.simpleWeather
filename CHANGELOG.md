@@ -2,11 +2,13 @@
 
 For a more complete changelog you can always check out the [commit log](https://github.com/monkeecreate/jquery.simpleWeather/commits/master).
 
-## v3.0 - X X X
+## v3.0 - May 17 2014
 
 * Complete rewrite! Removed over 100 lines of code without losing functionality.
 * Now < 4.0 kB in size.
-* Fixed http/https issue on API call [#79](https://github.com/monkeecreate/jquery.simpleWeather/pull/79).
+* Added forecast thumbnail image.
+* Removed tomorrow in favor of forecast.
+* Fixed http/https issue on API call [#79](https://github.com/monkeecreate/jquery.simpleWeather/pull/79) and images.
 * Hat tip to [@defvayne23](https://github.com/defvayne23) for a quick code review.
 
 ## v2.7 - April 17 2014

@@ -14,7 +14,7 @@
     simpleWeather: function(options){
       options = $.extend({
         location: '',
-        woeid: '2357536',
+        woeid: '',
         unit: 'f',
         success: function(weather){},
         error: function(message){}
@@ -74,8 +74,8 @@
               weather.thumbnail = image404;
               weather.image = image404;
             } else {
-              weather.thumbnail = "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+"ds.png";
-              weather.image = "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.condition.code+"d.png";
+              weather.thumbnail = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.condition.code+"ds.png";
+              weather.image = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.condition.code+"d.png";
             }
 
             weather.alt = {temp: getAltTemp(options.unit, result.item.condition.temp), high: getAltTemp(options.unit, result.item.forecast[0].high), low: getAltTemp(options.unit, result.item.forecast[0].low)};
@@ -91,9 +91,11 @@
               forecast.alt = {high: getAltTemp(options.unit, result.item.forecast[i].high), low: getAltTemp(options.unit, result.item.forecast[i].low)};
 
               if(result.item.forecast[i].code == "3200") {
+                forecast.thumbnail = image404;
                 forecast.image = image404;
               } else {
-                forecast.image = "http://l.yimg.com/a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png";
+                forecast.thumbnail = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"ds.png";
+                forecast.image = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png";
               }
 
               weather.forecast.push(forecast);
