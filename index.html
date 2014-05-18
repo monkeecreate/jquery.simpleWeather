@@ -8,13 +8,13 @@
 	<meta name="description" content="A simple jQuery plugin to display current weather data for any location and doesn't get in your way. Developed by James Fleeting.">
 	<meta name="viewport" content="width=device-width">
 	<!-- Facebook -->
-	<meta property="og:title" content="simpleWeather - a simple jQuery plugin">
+	<meta property="og:title" content="simpleWeather - Pretty much the best jQuery plugin in the world">
 	<meta property="og:description" content="A simple jQuery plugin to display current weather data for any location and doesn't get in your way. Developed by James Fleeting.">
 	<meta property="og:url" content="http://simpleweatherjs.com/">
 	<meta property="og:image" content="http://simpleweatherjs.com/images/og-image.png">
 	<!-- /Facebook -->
 
-	<title>simpleWeather - a simple jQuery plugin</title>
+	<title>simpleWeather.js - Pretty much the best jQuery plugin in the world.</title>
 
 	<link rel="author" href="humans.txt">
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
@@ -31,8 +31,8 @@
 			<ul class="nav nav-pills pull-right">
 				<li class="active"><a href="#home">Home</a></li>
 				<li><a href="#demo" class="jump">Demo</a></li>
-				<li><a href="#usage" class="jump">Usage</a></li>
 				<li><a href="#docs" class="jump">Docs</a></li>
+				<li><a href="#usage" class="jump">Usage</a></li>
 				<li><a href="#faq" class="jump">FAQ</a></li>
 				<li><a class="label label-default" href="https://github.com/monkeecreate/jquery.simpleWeather/" title="simpleWeather on GitHub">GitHub Project</a></li>
 			</ul>
@@ -44,9 +44,9 @@
 			<h1>Pretty much the best plugin in the world.</h1>
 			<p class="lead">A simple jQuery plugin to display current weather data for any location and doesn't get in your way. Now supports HTML5 GeoLocation!<br>Handcrafted with ♥ from Austin, Texas by <a href="http://twitter.com/fleetingftw">James Fleeting</a>.</p>
 
-			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v2.7.0</a>
+			<a class="btn btn-large btn-success" href="https://github.com/monkeecreate/jquery.simpleWeather/zipball/master" onClick="javascript: _gaq.push(['_trackPageview', '/download/']);">Download v3.0.0</a>
 
-			<p class="muted">Last updated on April 17, 2014<br /><a href="https://github.com/monkeecreate/jquery.simpleWeather/#get-the-latest">More ways to install</a></p>
+			<p class="muted">Last updated on May 17, 2014<br /><a href="https://github.com/monkeecreate/jquery.simpleWeather/#get-the-latest">More ways to install</a></p>
 
 			<pre class="install"><code>bower install simpleWeather</code></pre>
 
@@ -69,17 +69,43 @@
 		</div>
 		<hr>
 
+		<div id="docs" class="row-fluid">
+			<div class="span12">
+				<h3>You call these docs?</h3>
+
+				<p><strong>simpleWeather</strong> is meant to be... well simple. You simply provide your US zip code, WOEID, lat/long, or any location in the world and it returns your local weather from Yahoo! This plugin won't spit out a bunch of HTML full of classes and IDs. It just gives you the data for you to use, display, and style as you need. Get a full list of data in the table below.</p>
+
+				<p>Since <strong>geolocation</strong> is a common question, it is now supported as of v2.5.0. This means you can use HTML5 geolocation to pass in lat/long to simpleWeather and get data back. See demos below.</p>
+
+				<h4>ALL THE DEMOS!</h4>
+
+				<p>Over the past year or two I've compiled several demos from requests which you are lucky enough to have access to.</p>
+				<ul>
+					<li><a href="http://codepen.io/fleeting/pen/xwpar">Bare Minimum</a> - Dead simple demo with nothing but current temp.</li>
+					<li><a href="http://codepen.io/fleeting/pen/xklfq">Full Demo</a> - This is the demo above and includes using a custom icon font.</li>
+					<li><a href="http://codepen.io/fleeting/pen/skbqf">Forecast</a> - Gives you a five day forecast.</li>
+					<li><a href="http://codepen.io/fleeting/pen/Idsaj">Geolocation</a> - The most requested demo was how to use HTML5 geolocation or lat/long coordinates to get weather data; here you go.</li>
+					<li><a href="http://codepen.io/fleeting/pen/mdwlI">Auto Update</a> - Quick demo showing how to auto update the weather data. Usefull if you are displaying the weather on a dashboard.</li>
+					<li><a href="http://codepen.io/fleeting/pen/zvmyJ">Multiple Locations</a> - When you need to show weather info for more than one location.</li>
+					<li><a href="http://codepen.io/fleeting/pen/BExry">Last Updated</a> - Showing when the weather was last updated and using moment.js for a more friendly stamp.</li>
+					<li><a href="http://codepen.io/fleeting/pen/wzvAE">Using data for styling</a> - A quick example showing how to use the weather data to effect styling. In this case the background changes to either a blue (when the temp is lower) and an orange (when it is higher).</li>
+					<li><a href="http://codepen.io/fleeting/pen/yjhBK/">Data Dump</a> - This isn't as usefull of a demo but it shows a full data dump of every single piece of data that simpleWeather returns. If you are having trouble getting something to show up, I would start here.</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+
 		<div id="usage" class="row-fluid">
 			<div class="span12">
-				<h3>Example Usage</h3>
-				<p>The demo above gives you a real world example of how to display and style the weather. The table below shows every piece of data that is available for you to use. In most cases you won't need the majority of it however I make it all available so you can use whatever you want. The example values with links (thumbnail, image, link) all return the url, I just linked it so the table didn't look cluttered.</p>
+				<h3>The Data</h3>
+				<p>The table below shows every piece of data that is available for you. In most cases you won't need the majority of it however I make it all available so you can use whatever you want. The example values with links (thumbnail, image, link) all return the url, I just linked it so the table didn't look cluttered.</p>
 
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>
 							<th>Data</th>
 							<th>Description</th>
-							<th>Example value</th>
+							<th>Example Value</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -94,7 +120,7 @@
 							<td>75</td>
 						</tr>
 						<tr>
-							<td>tempAlt</td>
+							<td>alt.temp</td>
 							<td>If unit is set to f (fahrenheit), this will return the current temp in c (celsius) or or vice versa.</td>
 							<td>24</td>
 						</tr>
@@ -129,7 +155,7 @@
 							<td>mph</td>
 						</tr>
 						<tr>
-							<td>units.tempAlt</td>
+							<td>alt.unit</td>
 							<td>Returns the opposite from units.temp (if Fahrenheit, this will return the temp in Celsuis).</td>
 							<td>c</td>
 						</tr>
@@ -144,7 +170,7 @@
 							<td>82</td>
 						</tr>
 						<tr>
-							<td>highAlt</td>
+							<td>alt.high</td>
 							<td>Returns the opposite from high (if Fahrenheit, this will return the temp in Celsuis).</td>
 							<td>28</td>
 						</tr>
@@ -154,13 +180,13 @@
 							<td>47</td>
 						</tr>
 						<tr>
-							<td>lowAlt</td>
+							<td>alt.low</td>
 							<td>Returns the opposite from low (if Fahrenheit, this will return the temp in Celsuis).</td>
 							<td>8</td>
 						</tr>
 						<tr>
-							<td>forecast</td>
-							<td>Returns a textual description of the condition for the day vs current.</td>
+							<td>text</td>
+							<td>Returns a textual description of the condition for the day vs current. Formally `forecast`.</td>
 							<td>Sunny</td>
 						</tr>
 						<tr>
@@ -216,102 +242,67 @@
 						<tr>
 							<td>thumbnail</td>
 							<td>Returns the thumbnail image url for the current condition code.</td>
-							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32ds.png">View Image</a></td>
+							<td><a href="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/32ds.png">View Image</a></td>
 						</tr>
 						<tr>
 							<td>image</td>
 							<td>Returns the full size image url for the current condition code.</td>
-							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
+							<td><a href="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/32d.png">View Image</a></td>
 						</tr>
 						<tr>
-							<td>tomorrow.high</td>
-							<td>Returns the forecasted high temp for tomorrow.</td>
+							<td>tomorrow.X</td>
+							<td>Removed as of <strong>v3.0</strong> in favor of `forecast`; to get data for tomorrow it would now be `weather.forecast[1]`</td>
 							<td>78</td>
 						</tr>
 						<tr>
-							<td>tomorrow.highAlt</td>
-							<td>Returns the opposite from tomorrow.high (if Fahrenheit, this will return the temp in Celsuis).</td>
-							<td>25</td>
-						</tr>
-						<tr>
-							<td>tomorrow.low</td>
-							<td>Returns the forecasted low temp for tomorrow.</td>
-							<td>41</td>
-						</tr>
-						<tr>
-							<td>tomorrow.lowAlt</td>
-							<td>Returns the opposite from tomorrow.low (if Fahrenheit, this will return the temp in Celsuis).</td>
-							<td>5</td>
-						</tr>
-						<tr>
-							<td>tomorrow.forecast</td>
-							<td>Returns a textual description of the condition for tomorrow.</td>
-							<td>Thunderstorms</td>
-						</tr>
-						<tr>
-							<td>tomorrow.code</td>
-							<td>Returns the condition code for tomorrow. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>.</td>
-							<td>4</td>
-						</tr>
-						<tr>
-							<td>tomorrow.date</td>
-							<td>Returns the date for tomorrow.</td>
-							<td>12 Jan 2013</td>
-						</tr>
-						<tr>
-							<td>tomorrow.day</td>
-							<td>Returns the day for tomorrow.</td>
-							<td>Sat</td>
-						</tr>
-						<tr>
-							<td>tomorrow.image</td>
-							<td>Returns the full size image url for tomorrow's condition code.</td>
-							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
-						</tr>
-						<tr>
-							<td>forecasts.XX.high</td>
-							<td>Returns the forecasted high temp for XX day out. (XX = one, two, three, or four)</td>
+							<td>forecast[X].high</td>
+							<td>Returns the forecasted high temp for X day out. (X = 0-5; 0 is today)</td>
 							<td>78</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.highAlt</td>
-							<td>Returns the opposite from forecasts.XX.high (if Fahrenheit, this will return the temp in Celsuis) (XX = one, two, three, or four).</td>
+							<td>forecast[X].alt.high</td>
+							<td>Returns the opposite from forecast.X.high (if Fahrenheit, this will return the temp in Celsuis). (X = 0-5; 0 is today)</td>
 							<td>25</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.low</td>
-							<td>Returns the forecasted low temp for XX day out. (XX = one, two, three, or four)</td>
+							<td>forecast[X].low</td>
+							<td>Returns the forecasted low temp for X day out. (X = 0-5; 0 is today)</td>
 							<td>41</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.lowAlt</td>
-							<td>Returns the opposite from forecasts.XX.low (if Fahrenheit, this will return the temp in Celsuis) (XX = one, two, three, or four).</td>
+							<td>forecast[X].alt.low</td>
+							<td>Returns the opposite from forecast.X.low (if Fahrenheit, this will return the temp in Celsuis). (X = 0-5; 0 is today)</td>
 							<td>5</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.forecast</td>
-							<td>Returns a textual description of the condition for XX day. (XX = one, two, three, or four)</td>
+							<td>forecast[X].text</td>
+							<td>Returns a textual description of the condition for X day. Formally `forecast`. (X = 0-5; 0 is today)</td>
 							<td>Thunderstorms</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.code</td>
-							<td>Returns the condition code for XX day. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>. (XX = one, two, three, or four)</td>
+							<td>forecast[X].code</td>
+							<td>Returns the condition code for X day. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>. (X = 0-5; 0 is today)</td>
 							<td>4</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.date</td>
-							<td>Returns the date for XX day. (XX = one, two, three, or four)</td>
+							<td>forecast[X].date</td>
+							<td>Returns the date for X day. (X = 0-5; 0 is today)</td>
 							<td>12 Jan 2013</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.day</td>
-							<td>Returns the day for XX day. (XX = one, two, three, or four)</td>
+							<td>forecast[X].day</td>
+							<td>Returns the day for X day. (X = 0-5; 0 is today)</td>
 							<td>Sat</td>
 						</tr>
 						<tr>
-							<td>forecasts.XX.image</td>
-							<td>Returns the full size image url for XX day's condition code. (XX = one, two, three, or four)</td>
-							<td><a href="http://l.yimg.com/a/i/us/nws/weather/gr/32d.png">View Image</a></td>
+							<td>forecast[X].image</td>
+							<td>Returns the full size image url for X day's condition code. (X = 0-5; 0 is today)</td>
+							<td><a href="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/32d.png">View Image</a></td>
+						</tr>
+						<tr>
+							<td>forecast[X].thumbnail</td>
+							<td>Returns the thumbnail image url for X day's condition code. (X = 0-5; 0 is today)</td>
+							<td><a href="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/32d.png">View Image</a></td>
 						</tr>
 						<tr>
 							<td>city</td>
@@ -344,21 +335,6 @@
 		</div>
 		<hr>
 
-		<div id="docs" class="row-fluid">
-			<div class="span12">
-				<h3>One does not simply write docs</h3>
-
-				<p><span class="label label-info">Note:</span> You can use <a href="http://woeid.rosselliot.co.nz/lookup/">woeid.rosselliot.co.nz/lookup/</a> to find your locations unique WOEID.</p>
-
-				<p><strong>simpleWeather</strong> is meant to be... well simple. You simply provide your US zip code, WOEID or any location in the world and it returns your local weather from Yahoo! This plugin won't spit out a bunch of HTML full of classes and IDs. It just gives you the returned data for you to use, display and style as you need.</p>
-
-				<p>There are two params that you can use to pass in your location. The first being `location` and accepts any combination of city, state, country, US zip code, or latitude/longitude. The second is `woeid` and takes your locations ID only. Most locations will work using the location param however if it is not returning the location it should please switch to using the WOEID param and use the link above to get your ID if needed.</p>
-
-				<p>Since <strong>geolocation</strong> is a common question and is now supported as of v2.5.0 I have a quick demo that uses HTML5 geolocation to display your weather up on <a href="http://codepen.io/fleeting/pen/Idsaj">codepen</a>.</p>
-			</div>
-		</div>
-		<hr>
-
 		<div id="faq" class="row-fluid">
 			<div class="span12">
 				<h3>Y u no ask questions?</h3>
@@ -369,12 +345,7 @@
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>2</span> My location does not return the correct weather?</h4>
-					<p>If you are using the `location` param and having this issue it might be best to get your location's WOEID following the steps above in the docs. Some locations only work with a very specific name.</p>
-				</article>
-
-				<article>
-					<h4 class="text-info"><span>3</span> Can I use different weather icons instead of Yahoo's?</h4>
+					<h4 class="text-info"><span>2</span> Can I use different weather icons instead of Yahoo's?</h4>
 					<p>As of v1.7 you have access to the condition code which can be used to use your own images. Now this will require having images for all (even if the same is used over) <a href="http://developer.yahoo.com/weather/#codes" title="Condition Codes">Condition Codes</a> of which there are about 50. Basically you will need to name the images based on the condition code. Below is a quick example:</p>
 
 					<script src="https://gist.github.com/3983539.js"> </script>
@@ -383,32 +354,32 @@
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>4</span> Is it possible to display the forecast for the week?</h4>
+					<h4 class="text-info"><span>3</span> Is it possible to display the forecast for the week?</h4>
 					<p>As of <strong>v2.4.0</strong> Yahoo! Weather returns a five day forecast. You can access that data using `forecasts.one.high` or `forecasts.two.high`. You can do this for one through four. Reference the table above for complete data returned. Prior to v2.4.0 the Yahoo! Weather API only returned today and tomorrow's weather along with providing a link to view the full forecast.</p>
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>5</span> Can I use latitude/longitude or geolocation?</h4>
+					<h4 class="text-info"><span>4</span> Can I use latitude/longitude or geolocation?</h4>
 					<p>As of <strong>v2.5.0</strong> the `location` param now accepts latitude/longitude which means you can now use a visitors geolocation to display weather. Here is a quick demo to get you started: <a href="http://codepen.io/fleeting/pen/Idsaj">geolocation demo</a>.</p>
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>6</span> Why yet another weather widget/plugin?</h4>
+					<h4 class="text-info"><span>5</span> Why yet another weather widget/plugin?</h4>
 					<p>This plugin came about because I wanted control over what was displayed. I've used other widgets and plugins and found that none fit my needs. The biggest issue was not having control over the code it was spitting out. This included some plugins giving me crazy HTML with a bunch of classes. Why not write your own HTML? <strong>simpleWeather</strong> gives you all the available data and you choose what to use and how it should be display. This includes using your own HTML and CSS. More then that this means you can use the plugin for more then just displaying current weather. An example would be to create a dynamic design that changes based on the weather such as a header or images. <strong>simpleWeather</strong> makes it... well simple.</p>
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>7</span> Can I display the weather for multiple locations?</h4>
+					<h4 class="text-info"><span>6</span> Can I display the weather for multiple locations?</h4>
 					<p>Yes, you can use the plugin to display the weather for multiple locations by calling <strong>$.simpleWeather({...});</strong> as many times as you want. This allows you to retrieve the weather for multiple locations and display each different if you wish.</p>
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>8</span> How can I display the current temp in both F and C?</h4>
-					<p>As of version 1.9 you are able to do this. If your unit is set to F then based on the demo `weather.temp` shows the current temp in F and you can now use `weather.tempAlt` to display the temp in C. Same goes if the unit is set to C, `temp` is the degrees in that unit and `tempAlt` is in F. This only works with the current temp and not high, low, etc. If you are wanting to display more with both then you can use the <a href="https://github.com/monkeecreate/jquery.simpleWeather/blob/master/jquery.simpleWeather.js#L61">same calculations</a> in your success function.</p>
+					<h4 class="text-info"><span>7</span> How can I display the current temp in both F and C?</h4>
+					<p>As of version 1.9 you are able to do this. See table data above for details.</p>
 				</article>
 
 				<article>
-					<h4 class="text-info"><span>9</span> Oh no, the plugin is broke!</h4>
+					<h4 class="text-info"><span>8</span> Oh no, the plugin is broke!</h4>
 					<p>If you have any issues with <strong>simpleWeather</strong> you can submit an <a href="https://github.com/monkeecreate/jquery.simpleWeather/issues" title="simpleWeather Issues" onClick="javascript: _gaq.push(['_trackPageview', '/issues/']);">issue on GitHub</a>. Please provide detail on the issue and jsfiddle your code.</p>
 				</article>
 			</div>
@@ -416,7 +387,7 @@
 		<hr>
 
 		<div class="footer">
-			<p class="pull-left">Developed by <a href="http://jamesfleeting.com" title="Yes, that James Fleeting.">James Fleeting</a> - <a href="http://twitter.com/fleetingftw" title="Follow @fleetingftw">@fleetingftw</a><br />
+			<p class="pull-left">Developed by <a href="http://iwasasuperhero.com" title="Yes, that James Fleeting.">James Fleeting</a> - <a href="http://twitter.com/fleetingftw" title="Follow @fleetingftw">@fleetingftw</a><br />
 				Logo by <a href="http://blainebowers.com" title="BlaineBowers.com">Blaine Bowers</a> - <a href="http://twitter.com/flyingnowhere" title="Follow @flyingnowhere">@flyingnowhere</a></p>
 			<p class="pull-right">Handcrafted with ♥ from Austin, Texas.<br />
 				monkeeSee, monkeeDo, <a href="http://monkeecreate.com" title="monkeeCreate">monkeeCreate</a></p>
