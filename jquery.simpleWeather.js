@@ -1,4 +1,4 @@
-/*! simpleWeather v3.0.0 - http://simpleweatherjs.com */
+/*! simpleWeather v3.0.1 - http://simpleweatherjs.com */
 (function($) {
   "use strict";
 
@@ -94,8 +94,8 @@
                 forecast.thumbnail = image404;
                 forecast.image = image404;
               } else {
-                forecast.thumbnail = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"ds.png";
-                forecast.image = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.forecast[1].code+"d.png";
+                forecast.thumbnail = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.forecast[i].code+"ds.png";
+                forecast.image = "https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/"+result.item.forecast[i].code+"d.png";
               }
 
               weather.forecast.push(forecast);

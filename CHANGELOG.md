@@ -2,6 +2,10 @@
 
 For a more complete changelog you can always check out the [commit log](https://github.com/monkeecreate/jquery.simpleWeather/commits/master).
 
+## v3.0.1 - May 22 2014
+
+* Fixed forecast thumbnail and image bug. [#88](https://github.com/monkeecreate/jquery.simpleWeather/issues/88)
+
 ## v3.0 - May 17 2014
 
 * Complete rewrite! Removed over 100 lines of code without losing functionality.
