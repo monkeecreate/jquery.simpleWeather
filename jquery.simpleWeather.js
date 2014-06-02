@@ -1,4 +1,4 @@
-/*! simpleWeather v3.0.1 - http://simpleweatherjs.com */
+/*! simpleWeather v3.0.2 - http://simpleweatherjs.com */
 (function($) {
   "use strict";
 
@@ -23,7 +23,7 @@
       var now = new Date();
       var weatherUrl = 'https://query.yahooapis.com/v1/public/yql?format=json&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&diagnostics=true&callback=?&q=';
       if(options.location !== '') {
-        weatherUrl += 'select * from weather.forecast where woeid in (select woeid from geo.placefinder where text="'+options.location+'" and gflags="R") and u="'+options.unit+'"';
+        weatherUrl += 'select * from weather.forecast where woeid in (select woeid from geo.placefinder where text="'+options.location+'" and gflags="R" limit 1) and u="'+options.unit+'"';
       } else if(options.woeid !== '') {
         weatherUrl += 'select * from weather.forecast where woeid='+options.woeid+' and u="'+options.unit+'"';
       } else {

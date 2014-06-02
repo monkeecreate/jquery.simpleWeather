@@ -15,7 +15,7 @@ component install monkeecreate/jquery.simpleWeather
 
 **[CDNJS](http://cdnjs.com/libraries/jquery.simpleWeather/)**
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.1/jquery.simpleWeather.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
 ```
 
 **Git**

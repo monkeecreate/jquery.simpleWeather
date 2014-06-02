@@ -17,7 +17,6 @@ gulp.task('lint', function () {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-
 gulp.task('build', ['lint'], function () {
   return gulp.src(source)
     .pipe(rename(sourceMin))
