@@ -256,52 +256,52 @@
 						</tr>
 						<tr>
 							<td>forecast[X].high</td>
-							<td>Returns the forecasted high temp for X day out. (X = 0-5; 0 is today)</td>
+							<td>Returns the forecasted high temp for X day out. (X = 0-4; 0 is today)</td>
 							<td>78</td>
 						</tr>
 						<tr>
 							<td>forecast[X].alt.high</td>
-							<td>Returns the opposite from forecast.X.high (if Fahrenheit, this will return the temp in Celsuis). (X = 0-5; 0 is today)</td>
+							<td>Returns the opposite from forecast.X.high (if Fahrenheit, this will return the temp in Celsuis). (X = 0-4; 0 is today)</td>
 							<td>25</td>
 						</tr>
 						<tr>
 							<td>forecast[X].low</td>
-							<td>Returns the forecasted low temp for X day out. (X = 0-5; 0 is today)</td>
+							<td>Returns the forecasted low temp for X day out. (X = 0-4; 0 is today)</td>
 							<td>41</td>
 						</tr>
 						<tr>
 							<td>forecast[X].alt.low</td>
-							<td>Returns the opposite from forecast.X.low (if Fahrenheit, this will return the temp in Celsuis). (X = 0-5; 0 is today)</td>
+							<td>Returns the opposite from forecast.X.low (if Fahrenheit, this will return the temp in Celsuis). (X = 0-4; 0 is today)</td>
 							<td>5</td>
 						</tr>
 						<tr>
 							<td>forecast[X].text</td>
-							<td>Returns a textual description of the condition for X day. Formally `forecast`. (X = 0-5; 0 is today)</td>
+							<td>Returns a textual description of the condition for X day. Formally `forecast`. (X = 0-4; 0 is today)</td>
 							<td>Thunderstorms</td>
 						</tr>
 						<tr>
 							<td>forecast[X].code</td>
-							<td>Returns the condition code for X day. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>. (X = 0-5; 0 is today)</td>
+							<td>Returns the condition code for X day. View a list <a href="http://developer.yahoo.com/weather/#codes">condition codes</a>. (X = 0-4; 0 is today)</td>
 							<td>4</td>
 						</tr>
 						<tr>
 							<td>forecast[X].date</td>
-							<td>Returns the date for X day. (X = 0-5; 0 is today)</td>
+							<td>Returns the date for X day. (X = 0-4; 0 is today)</td>
 							<td>12 Jan 2013</td>
 						</tr>
 						<tr>
 							<td>forecast[X].day</td>
-							<td>Returns the day for X day. (X = 0-5; 0 is today)</td>
+							<td>Returns the day for X day. (X = 0-4; 0 is today)</td>
 							<td>Sat</td>
 						</tr>
 						<tr>
 							<td>forecast[X].image</td>
-							<td>Returns the full size image url for X day's condition code. (X = 0-5; 0 is today)</td>
+							<td>Returns the full size image url for X day's condition code. (X = 0-4; 0 is today)</td>
 							<td><a href="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/32d.png">View Image</a></td>
 						</tr>
 						<tr>
 							<td>forecast[X].thumbnail</td>
-							<td>Returns the thumbnail image url for X day's condition code. (X = 0-5; 0 is today)</td>
+							<td>Returns the thumbnail image url for X day's condition code. (X = 0-4; 0 is today)</td>
 							<td><a href="https://s.yimg.com/zz/combo?a/i/us/nws/weather/gr/32d.png">View Image</a></td>
 						</tr>
 						<tr>
@@ -355,7 +355,7 @@
 
 				<article>
 					<h4 class="text-info"><span>3</span> Is it possible to display the forecast for the week?</h4>
-					<p>As of <strong>v2.4.0</strong> Yahoo! Weather returns a five day forecast. You can access that data using `forecasts.one.high` or `forecasts.two.high`. You can do this for one through four. Reference the table above for complete data returned. Prior to v2.4.0 the Yahoo! Weather API only returned today and tomorrow's weather along with providing a link to view the full forecast.</p>
+					<p>As of <strong>v2.4.0</strong> Yahoo! Weather returns a five day forecast. Reference the table above for `forecast[X]`.</p>
 				</article>
 
 				<article>
