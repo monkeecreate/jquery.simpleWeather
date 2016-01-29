@@ -2,6 +2,11 @@
 
 For a more complete changelog you can always check out the [commit log](https://github.com/monkeecreate/jquery.simpleWeather/commits/master).
 
+## v3.1.0 - January 29 2016
+
+* Fixed location errors due to Yahoo removing geo.placefinder from their API. It has been replaced with geo.places. [#174](https://github.com/monkeecreate/jquery.simpleWeather/issues/174)
+* Fixed error callback to correctly return an error message. [#101](https://github.com/monkeecreate/jquery.simpleWeather/issues/101)
+
 ## v3.0.2 - June 2 2014
 
 * Fixed result issue when more than one location was returned. [#90](https://github.com/monkeecreate/jquery.simpleWeather/issues/90)

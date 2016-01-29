@@ -1,6 +1,6 @@
 {
   "name": "simpleweather",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "A simple jQuery plugin to display current weather data for any location and doesn't get in your way. Handcrafted with ♥ from Austin, Texas by James Fleeting.",
   "keywords": [
     "jquery",
@@ -32,13 +32,13 @@
   ],
   "devDependencies": {
     "gulp": "latest",
-    "gulp-uglify": "latest",
-    "gulp-jshint": "latest",
-    "gulp-rename": "latest",
     "gulp-bump": "latest",
-    "gulp-git": "~0.2.0",
+    "gulp-git": "^1.7.0",
+    "gulp-jshint": "latest",
+    "gulp-notify": "latest",
+    "gulp-rename": "latest",
     "gulp-size": "latest",
-    "jshint-stylish": "latest",
-    "gulp-notify": "latest"
+    "gulp-uglify": "latest",
+    "jshint-stylish": "latest"
   }
 }
