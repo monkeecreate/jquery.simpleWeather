@@ -26,5 +26,9 @@ git clone git://github.com/monkeecreate/jquery.simpleWeather.git
 **Zip File**
 > Download the latest version at [simpleweatherjs.com](https://monkeecreate.github.io/jquery.simpleWeather/)
 
+## Alternatives
+
+* [SimplerWeather](https://github.com/BrookeDot/SimplerWeather) uses the DarkSky API and includes a php proxy to help keep your API key secret.
+
 ## Questions?
 If you have any questions or problems hit me up on [twitter](http://twitter.com/fleetingftw) or create a [new issue](https://github.com/monkeecreate/jquery.simpleWeather/issues/new). Don't forget to check the documentation and FAQ at [simpleweatherjs.com](https://monkeecreate.github.io/jquery.simpleWeather/).
